@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>队顺序与组顺序 | ConfusedBear熊小维</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，现在完成了任务，来梳理一下： 队顺序即从0开始逐个递增的队列顺序 组顺序队列中若干个为一组，组号也从0开始逐个递增 示例队顺序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 组顺序    0 1 2 3       4 5 6  7                   8 参数">
+  <meta name="description" content="今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，现在完成了任务，来梳理一下： 队顺序即从0开始逐个递增的队列顺序 组顺序队列中若干个为一组，组号也从0开始逐个递增 示例队顺序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 组顺序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7">
 <meta name="keywords" content="逻辑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="队顺序与组顺序">
 <meta property="og:url" content="http://yoursite.com/2019/04/18/队列顺序与组顺序/index.html">
 <meta property="og:site_name" content="ConfusedBear熊小维">
-<meta property="og:description" content="今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，现在完成了任务，来梳理一下： 队顺序即从0开始逐个递增的队列顺序 组顺序队列中若干个为一组，组号也从0开始逐个递增 示例队顺序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 组顺序    0 1 2 3       4 5 6  7                   8 参数">
+<meta property="og:description" content="今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，现在完成了任务，来梳理一下： 队顺序即从0开始逐个递增的队列顺序 组顺序队列中若干个为一组，组号也从0开始逐个递增 示例队顺序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 组顺序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-18T15:42:00.176Z">
+<meta property="og:updated_time" content="2019-04-18T15:47:09.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="队顺序与组顺序">
-<meta name="twitter:description" content="今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，现在完成了任务，来梳理一下： 队顺序即从0开始逐个递增的队列顺序 组顺序队列中若干个为一组，组号也从0开始逐个递增 示例队顺序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 组顺序    0 1 2 3       4 5 6  7                   8 参数">
+<meta name="twitter:description" content="今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，现在完成了任务，来梳理一下： 队顺序即从0开始逐个递增的队列顺序 组顺序队列中若干个为一组，组号也从0开始逐个递增 示例队顺序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 组顺序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7">
   
     <link rel="alternative" href="/atom.xml" title="ConfusedBear熊小维" type="application/atom+xml">
   
@@ -175,8 +175,8 @@
 <h4 id="队顺序"><a href="#队顺序" class="headerlink" title="队顺序"></a>队顺序</h4><p>即从0开始逐个递增的队列顺序</p>
 <h4 id="组顺序"><a href="#组顺序" class="headerlink" title="组顺序"></a>组顺序</h4><p>队列中若干个为一组，组号也从0开始逐个递增</p>
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>队顺序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</p>
-<p>组顺序    0 1 2 3       4 5 6  7                   8</p>
-<p>参数            0 0 0 3           0 0 0  5                               0</p>
+<p>组顺序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7   8</p>
+<p>参数            0 0 0 3______________ 0 0 0  5 <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>_</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>  0</p>
 <blockquote>
 <p>参数代表该组第一个后还剩下几个</p>
 </blockquote>
