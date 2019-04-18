@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>ConfusedBear熊小维</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="ConfusedBear熊小维">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="ConfusedBear熊小维">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="ConfusedBear熊小维">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="ConfusedBear熊小维" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -147,6 +147,104 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-队列顺序与组顺序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/18/队列顺序与组顺序/">队顺序与组顺序</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/18/队列顺序与组顺序/" class="archive-article-date">
+  	<time datetime="2019-04-18T15:20:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，现在完成了任务，来梳理一下：</p>
+<h4 id="队顺序"><a href="#队顺序" class="headerlink" title="队顺序"></a>队顺序</h4><p>即从0开始逐个递增的队列顺序</p>
+<h4 id="组顺序"><a href="#组顺序" class="headerlink" title="组顺序"></a>组顺序</h4><p>队列中若干个为一组，组号也从0开始逐个递增</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>队顺序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</p>
+<p>组顺序    0 1 2 3       4 5 6  7                   8</p>
+<p>参数            0 0 0 3           0 0 0  5                               0</p>
+<blockquote>
+<p>参数代表该组第一个后还剩下几个</p>
+</blockquote>
+<h4 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h4><p>希望出题的顺序是按组出题，每组题目在一个页面</p>
+<h4 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h4><p>首先来模拟真实的<strong>递增</strong>情况：</p>
+<p>队号：0    -&gt;    队号：1    -&gt;    队号：2    -&gt;    队号：3    -&gt;    <strong>队号：7</strong></p>
+<p>组号：0    -&gt;    组号：1    -&gt;    组号：2    -&gt;    组号：3    -&gt;    <strong>组号：4</strong></p>
+<p>参数：0    -&gt;    参数：0    -&gt;    参数：0    -&gt;    参数：3    -&gt;    <strong>参数：0</strong></p>
+<blockquote>
+<p>顺序：组号 + 1    -&gt;    队号 + 1    -&gt;    <strong>队号 + 上一个组号的参数</strong>    -&gt;    渲染该组题目</p>
+</blockquote>
+<p>然后来模拟真实的<strong>递减</strong>情况：</p>
+<p><strong>队号：7</strong>    -&gt;    队号：3    -&gt;    队号：2    -&gt;    队号：1    -&gt;    队号：0</p>
+<p><strong>组号：4</strong>    -&gt;    组号：3    -&gt;    组号：2    -&gt;    组号：1    -&gt;    组号：0</p>
+<p><strong>参数：0</strong>    -&gt;    参数：0    -&gt;    参数：0    -&gt;    参数：3    -&gt;    参数：0</p>
+<blockquote>
+<p>顺序：组号 - 1    -&gt;    队号 - 1    -&gt;    <strong>队号 - 当前组号的参数</strong>    -&gt;    渲染该组题目</p>
+</blockquote>
+<p>成了！这样就可以始终保持渲染时顺序正确</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">逻辑</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/18/队列顺序与组顺序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-React小项目走过的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -388,6 +486,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">逻辑</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
