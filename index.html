@@ -177,23 +177,9 @@
 <blockquote>
 <p>参数代表该组第一个后还剩下几个</p>
 </blockquote>
-<h4 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h4><p>希望出题的顺序是按组出题，每组题目在一个页面</p>
-<h4 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h4><p>首先来模拟真实的<strong>递增</strong>情况：</p>
-<p>队号：0    -&gt;    队号：1    -&gt;    队号：2    -&gt;    队号：3    -&gt;    <strong>队号：7</strong></p>
-<p>组号：0    -&gt;    组号：1    -&gt;    组号：2    -&gt;    组号：3    -&gt;    <strong>组号：4</strong></p>
-<p>参数：0    -&gt;    参数：0    -&gt;    参数：0    -&gt;    参数：3    -&gt;    <strong>参数：0</strong></p>
-<blockquote>
-<p>顺序：组号 + 1    -&gt;    队号 + 1    -&gt;    <strong>队号 + 上一个组号的参数</strong>    -&gt;    渲染该组题目</p>
-</blockquote>
-<p>然后来模拟真实的<strong>递减</strong>情况：</p>
-<p><strong>队号：7</strong>    -&gt;    队号：3    -&gt;    队号：2    -&gt;    队号：1    -&gt;    队号：0</p>
-<p><strong>组号：4</strong>    -&gt;    组号：3    -&gt;    组号：2    -&gt;    组号：1    -&gt;    组号：0</p>
-<p><strong>参数：0</strong>    -&gt;    参数：0    -&gt;    参数：0    -&gt;    参数：3    -&gt;    参数：0</p>
-<blockquote>
-<p>顺序：组号 - 1    -&gt;    队号 - 1    -&gt;    <strong>队号 - 当前组号的参数</strong>    -&gt;    渲染该组题目</p>
-</blockquote>
-<p>成了！这样就可以始终保持渲染时顺序正确</p>
-
+        
+          <a class="article-more-a" href="/2019/04/18/队列顺序与组顺序/#more">more >></a>
+        
       
 
       
@@ -488,11 +474,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">逻辑</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color3">逻辑</a>
               </li>
             
             <div class="clearfix"></div>
