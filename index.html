@@ -171,9 +171,9 @@
         <p>今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，因为题目都是一个个的按照队的顺序来存储，但是用的时候需要按组来拿出题目展示，现在完成了任务，来梳理一下：</p>
 <h4 id="队顺序"><a href="#队顺序" class="headerlink" title="队顺序"></a>队顺序</h4><p>即从0开始逐个递增的队列顺序</p>
 <h4 id="组顺序"><a href="#组顺序" class="headerlink" title="组顺序"></a>组顺序</h4><p>队列中若干个为一组，组号也从0开始逐个递增</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>队顺序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</p>
-<p>组顺序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7   8</p>
-<p>参数            0 0 0 3______________ 0 0 0  5 <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>_</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>  0</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>队序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</p>
+<p>组序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7   8</p>
+<p>参数        0 0 0 3 = = = 0 0 0  5   =   =    =   =   =   0</p>
 <blockquote>
 <p>参数代表该组第一个后还剩下几个</p>
 </blockquote>
@@ -403,11 +403,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color3">逻辑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">逻辑</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
             
             <div class="clearfix"></div>
