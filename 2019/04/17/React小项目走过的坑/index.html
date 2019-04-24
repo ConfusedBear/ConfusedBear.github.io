@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ConfusedBear熊小维">
 <meta property="og:description" content="花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。 Cookie获取起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。 但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cook">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-17T15:36:50.286Z">
+<meta property="og:updated_time" content="2019-04-24T13:55:44.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React小项目走过的坑">
 <meta name="twitter:description" content="花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。 Cookie获取起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。 但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cook">
@@ -176,6 +176,9 @@
 <p>但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cookies（这个插件的下载数还有前面的几十分之一，取名还这么像，莫不是碰瓷的），大多数只适应于前端页面自己存自己取，对于后台传进来的Cookie，虽然浏览器可以看得到，但是目前还没有什么好办法可以获得。</p>
 <p>花了一个上午的时候找前端如何拿到后端传来的Cookie，后来改用直接解析URL参数的方式，五分钟就拿到了。选对方法很重要~</p>
 <h4 id="State参数之间无关"><a href="#State参数之间无关" class="headerlink" title="State参数之间无关"></a>State参数之间无关</h4><p>在constructor中的this.state中设置的参数ABC，其实它们之间并无法直接调用，就好像隔着无形的墙壁一样，比如A=10，B=A*2这样的会报错，因为在B看来，A的值是不知道的，这一个问题尝试了很久，一直发现后面的变量认不出前面的变量的值，最后还是各自分配值解决了问题。</p>
+<h4 id="本地代码中实现跨域请求"><a href="#本地代码中实现跨域请求" class="headerlink" title="本地代码中实现跨域请求"></a>本地代码中实现跨域请求</h4><p>由于本地代码运行时在Localhost3000中，如果这是需要通过fetch请求其他网站上的资源，如需要向百度地图发送请求，就会由于跨域被阻拦请求</p>
+<p>这时就可以使用fetch-jsonp来实现跨域：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fetchJsonp <span class="keyword">from</span> <span class="string">'fetch-jsonp'</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"http://api.map.baidu.com/geoconv/v1/?coords="</span> + <span class="keyword">this</span>.state.GPSlng + <span class="string">","</span> + <span class="keyword">this</span>.state.GPSlat + <span class="string">"&amp;from=1&amp;to=5&amp;ak=mUUbFKtgsaM2rWyuLLIDcyrSkhvGYzmn"</span></span><br><span class="line">fetchJsonp(url, &#123;</span><br><span class="line">	method: <span class="string">"GET"</span>,</span><br><span class="line">	mode: <span class="string">'cors'</span>,</span><br><span class="line">	headers: &#123;</span><br><span class="line">		Accept : <span class="string">'application/json'</span></span><br><span class="line">        <span class="comment">// 'Content-Type': 'application/x-www-form-urlencoded',</span></span><br><span class="line">        <span class="comment">// 'Access-Control-Allow-Origin': '*'</span></span><br><span class="line">      &#125;,</span><br><span class="line">		jsonpCallbackFunction: <span class="string">'showLocation'</span></span><br><span class="line">    &#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> response.json()</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="comment">//此处对获得的结果进行处理</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
 
       
 
@@ -293,6 +296,17 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/04/17/React小项目走过的坑/", 
+    sourceId: "React小项目走过的坑",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -391,11 +405,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">逻辑</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color3">逻辑</a>
               </li>
             
             <div class="clearfix"></div>
