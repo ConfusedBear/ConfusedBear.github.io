@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ConfusedBear熊小维</title>
+  <title>Python爬虫安装报错解决办法 | ConfusedBear熊小维</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ConfusedBear熊小维">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="参考书籍：Python 3网络爬虫开发实战.pdf1 tesserocr安装问题安装完tesseract后安装tesserocr 使用Pip安装始终报错  解决方案 是使用编译好的.whl文件进行安装 .whl的下载地址为： https://github.com/simonflueckiger/tesserocr-windows_build/releases  都安装好后试用时报错，无法识别且报错">
+<meta name="keywords" content="Python爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫安装报错解决办法">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/Python爬虫安装报错解决办法/index.html">
 <meta property="og:site_name" content="ConfusedBear熊小维">
+<meta property="og:description" content="参考书籍：Python 3网络爬虫开发实战.pdf1 tesserocr安装问题安装完tesseract后安装tesserocr 使用Pip安装始终报错  解决方案 是使用编译好的.whl文件进行安装 .whl的下载地址为： https://github.com/simonflueckiger/tesserocr-windows_build/releases  都安装好后试用时报错，无法识别且报错">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-27T16:55:19.452Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ConfusedBear熊小维">
+<meta name="twitter:title" content="Python爬虫安装报错解决办法">
+<meta name="twitter:description" content="参考书籍：Python 3网络爬虫开发实战.pdf1 tesserocr安装问题安装完tesseract后安装tesserocr 使用Pip安装始终报错  解决方案 是使用编译好的.whl文件进行安装 .whl的下载地址为： https://github.com/simonflueckiger/tesserocr-windows_build/releases  都安装好后试用时报错，无法识别且报错">
   
     <link rel="alternative" href="/atom.xml" title="ConfusedBear熊小维" type="application/atom+xml">
   
@@ -146,95 +151,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-数据库新建多边形-计算点是否在多边形内" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Python爬虫安装报错解决办法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/27/数据库新建多边形-计算点是否在多边形内/">数据库新建多边形+计算点是否在多边形内</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/27/数据库新建多边形-计算点是否在多边形内/" class="archive-article-date">
-  	<time datetime="2019-04-27T14:14:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-数据库新建GEOMTRY多边形类型字段"><a href="#1-数据库新建GEOMTRY多边形类型字段" class="headerlink" title="1 数据库新建GEOMTRY多边形类型字段"></a>1 数据库新建GEOMTRY多边形类型字段</h2><p>新建数据类型字段geom_fence，选择类型为（type)</p>
-<h2 id="2-将经纬度转换为POLYGON类型保存"><a href="#2-将经纬度转换为POLYGON类型保存" class="headerlink" title="2 将经纬度转换为POLYGON类型保存"></a>2 将经纬度转换为POLYGON类型保存</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> tr_qa_scenes</span><br><span class="line"><span class="keyword">SET</span> geom_fence = ST_GeomFromText (<span class="string">'POLYGON((119.206801 29.381917,119.22103 29.360262,119.233247 29.383302,119.206801 29.381917))'</span>,<span class="number">4326</span>)</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="string">'26'</span></span><br></pre></td></tr></table></figure>
-<p>转变后为：</p>
-<p>0103000020E61000000100000004000000EDF1423A3CCD5D4054C90050C5613D40D55B035B25CE5D40D6FD63213A5C3D40F838D384EDCE5D40CC7D721420623D40EDF1423A3CCD5D4054C90050C5613D40</p>
-<h2 id="3-判断点与多边形进行对比，判断在内在外"><a href="#3-判断点与多边形进行对比，判断在内在外" class="headerlink" title="3 判断点与多边形进行对比，判断在内在外"></a>3 判断点与多边形进行对比，判断在内在外</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,ST_Contains(</span><br><span class="line">	geom_fence,ST_GeomFromText(<span class="string">'POINT(120.15701 30.236863)'</span>,<span class="number">4326</span>)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">FROM</span> tr_qa_scenes</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="string">'1'</span></span><br></pre></td></tr></table></figure>
-<p>正确返回True，错误返回False</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Postgre</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/27/数据库新建多边形-计算点是否在多边形内/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python爬虫安装报错解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/20/Python爬虫安装报错解决办法/">Python爬虫安装报错解决办法</a>
+    <h1 class="article-title" itemprop="name">
+      Python爬虫安装报错解决办法
     </h1>
   
 
@@ -280,16 +204,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/20/Python爬虫安装报错解决办法/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/20/Python爬虫安装报错解决办法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/04/27/数据库新建多边形-计算点是否在多边形内/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据库新建多边形+计算点是否在多边形内
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/18/队列顺序与组顺序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">队顺序与组顺序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -309,173 +301,25 @@
 
 
 
-
   
-    <article id="post-队列顺序与组顺序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/18/队列顺序与组顺序/">队顺序与组顺序</a>
-    </h1>
   
-
-        
-        <a href="/2019/04/18/队列顺序与组顺序/" class="archive-article-date">
-  	<time datetime="2019-04-18T15:20:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，因为题目都是一个个的按照队的顺序来存储，但是用的时候需要按组来拿出题目展示，现在完成了任务，来梳理一下：</p>
-<h4 id="队顺序"><a href="#队顺序" class="headerlink" title="队顺序"></a>队顺序</h4><p>即从0开始逐个递增的队列顺序</p>
-<h4 id="组顺序"><a href="#组顺序" class="headerlink" title="组顺序"></a>组顺序</h4><p>队列中若干个为一组，组号也从0开始逐个递增</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>队序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</p>
-<p>组序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7   8</p>
-<p>参数        0 0 0 3 = = = 0 0 0  5   =   =    =   =   =   0</p>
-<blockquote>
-<p>参数代表该组第一个后还剩下几个</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/04/18/队列顺序与组顺序/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">逻辑</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/18/队列顺序与组顺序/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-React小项目走过的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/17/React小项目走过的坑/">React小项目走过的坑</a>
-    </h1>
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/04/20/Python爬虫安装报错解决办法/", 
+    sourceId: "Python爬虫安装报错解决办法",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        
-        <a href="/2019/04/17/React小项目走过的坑/" class="archive-article-date">
-  	<time datetime="2019-04-17T14:12:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。</p>
-<h4 id="Cookie获取"><a href="#Cookie获取" class="headerlink" title="Cookie获取"></a>Cookie获取</h4><p>起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。</p>
-<p>但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cookies（这个插件的下载数还有前面的几十分之一，取名还这么像，莫不是碰瓷的），大多数只适应于前端页面自己存自己取，对于后台传进来的Cookie，虽然浏览器可以看得到，但是目前还没有什么好办法可以获得。</p>
-<p>花了一个上午的时候找前端如何拿到后端传来的Cookie，后来改用直接解析URL参数的方式，五分钟就拿到了。选对方法很重要~</p>
-<h4 id="State参数之间无关"><a href="#State参数之间无关" class="headerlink" title="State参数之间无关"></a>State参数之间无关</h4><p>在constructor中的this.state中设置的参数ABC，其实它们之间并无法直接调用，就好像隔着无形的墙壁一样，比如A=10，B=A*2这样的会报错，因为在B看来，A的值是不知道的，这一个问题尝试了很久，一直发现后面的变量认不出前面的变量的值，最后还是各自分配值解决了问题。</p>
-<h4 id="本地代码中实现跨域请求"><a href="#本地代码中实现跨域请求" class="headerlink" title="本地代码中实现跨域请求"></a>本地代码中实现跨域请求</h4><p>由于本地代码运行时在Localhost3000中，如果这是需要通过fetch请求其他网站上的资源，如需要向百度地图发送请求，就会由于跨域被阻拦请求</p>
-<p>这时就可以使用fetch-jsonp来实现跨域：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fetchJsonp <span class="keyword">from</span> <span class="string">'fetch-jsonp'</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"http://api.map.baidu.com/geoconv/v1/?coords="</span> + <span class="keyword">this</span>.state.GPSlng + <span class="string">","</span> + <span class="keyword">this</span>.state.GPSlat + <span class="string">"&amp;from=1&amp;to=5&amp;ak=mUUbFKtgsaM2rWyuLLIDcyrSkhvGYzmn"</span></span><br><span class="line">fetchJsonp(url, &#123;</span><br><span class="line">	method: <span class="string">"GET"</span>,</span><br><span class="line">	mode: <span class="string">'cors'</span>,</span><br><span class="line">	headers: &#123;</span><br><span class="line">		Accept : <span class="string">'application/json'</span></span><br><span class="line">        <span class="comment">// 'Content-Type': 'application/x-www-form-urlencoded',</span></span><br><span class="line">        <span class="comment">// 'Access-Control-Allow-Origin': '*'</span></span><br><span class="line">      &#125;,</span><br><span class="line">		jsonpCallbackFunction: <span class="string">'showLocation'</span></span><br><span class="line">    &#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> response.json()</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="comment">//此处对获得的结果进行处理</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/17/React小项目走过的坑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -498,8 +342,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
