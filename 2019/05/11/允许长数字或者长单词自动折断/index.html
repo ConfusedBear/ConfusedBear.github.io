@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>React小项目走过的坑 | ConfusedBear熊小维</title>
+  <title>允许长数字或者长单词自动折断 | ConfusedBear熊小维</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。 Cookie获取起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。 但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cook">
-<meta name="keywords" content="React">
+  <meta name="description" content="默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的 解决办法在 table 外组件上添加属性： 1whiteSpace: &apos;normal&apos;, wordBreak: &apos;break-all&apos;, wordWrap: &apos;break-word&apos;">
+<meta name="keywords" content="table">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React小项目走过的坑">
-<meta property="og:url" content="http://yoursite.com/2019/04/17/React小项目走过的坑/index.html">
+<meta property="og:title" content="允许长数字或者长单词自动折断">
+<meta property="og:url" content="http://yoursite.com/2019/05/11/允许长数字或者长单词自动折断/index.html">
 <meta property="og:site_name" content="ConfusedBear熊小维">
-<meta property="og:description" content="花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。 Cookie获取起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。 但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cook">
+<meta property="og:description" content="默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的 解决办法在 table 外组件上添加属性： 1whiteSpace: &apos;normal&apos;, wordBreak: &apos;break-all&apos;, wordWrap: &apos;break-word&apos;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-24T13:55:44.180Z">
+<meta property="og:updated_time" content="2019-05-11T14:32:16.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React小项目走过的坑">
-<meta name="twitter:description" content="花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。 Cookie获取起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。 但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cook">
+<meta name="twitter:title" content="允许长数字或者长单词自动折断">
+<meta name="twitter:description" content="默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的 解决办法在 table 外组件上添加属性： 1whiteSpace: &apos;normal&apos;, wordBreak: &apos;break-all&apos;, wordWrap: &apos;break-word&apos;">
   
     <link rel="alternative" href="/atom.xml" title="ConfusedBear熊小维" type="application/atom+xml">
   
@@ -151,34 +151,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-React小项目走过的坑" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-允许长数字或者长单词自动折断" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      React小项目走过的坑
+      允许长数字或者长单词自动折断
     </h1>
   
 
         
-        <a href="/2019/04/17/React小项目走过的坑/" class="archive-article-date">
-  	<time datetime="2019-04-17T14:12:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
+        <a href="/2019/05/11/允许长数字或者长单词自动折断/" class="archive-article-date">
+  	<time datetime="2019-05-11T14:31:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。</p>
-<h4 id="Cookie获取"><a href="#Cookie获取" class="headerlink" title="Cookie获取"></a>Cookie获取</h4><p>起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。</p>
-<p>但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cookies（这个插件的下载数还有前面的几十分之一，取名还这么像，莫不是碰瓷的），大多数只适应于前端页面自己存自己取，对于后台传进来的Cookie，虽然浏览器可以看得到，但是目前还没有什么好办法可以获得。</p>
-<p>花了一个上午的时候找前端如何拿到后端传来的Cookie，后来改用直接解析URL参数的方式，五分钟就拿到了。选对方法很重要~</p>
-<h4 id="State参数之间无关"><a href="#State参数之间无关" class="headerlink" title="State参数之间无关"></a>State参数之间无关</h4><p>在constructor中的this.state中设置的参数ABC，其实它们之间并无法直接调用，就好像隔着无形的墙壁一样，比如A=10，B=A*2这样的会报错，因为在B看来，A的值是不知道的，这一个问题尝试了很久，一直发现后面的变量认不出前面的变量的值，最后还是各自分配值解决了问题。</p>
-<h4 id="本地代码中实现跨域请求"><a href="#本地代码中实现跨域请求" class="headerlink" title="本地代码中实现跨域请求"></a>本地代码中实现跨域请求</h4><p>由于本地代码运行时在Localhost3000中，如果这是需要通过fetch请求其他网站上的资源，如需要向百度地图发送请求，就会由于跨域被阻拦请求</p>
-<p>这时就可以使用fetch-jsonp来实现跨域：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fetchJsonp <span class="keyword">from</span> <span class="string">'fetch-jsonp'</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"http://api.map.baidu.com/geoconv/v1/?coords="</span> + <span class="keyword">this</span>.state.GPSlng + <span class="string">","</span> + <span class="keyword">this</span>.state.GPSlat + <span class="string">"&amp;from=1&amp;to=5&amp;ak=mUUbFKtgsaM2rWyuLLIDcyrSkhvGYzmn"</span></span><br><span class="line">fetchJsonp(url, &#123;</span><br><span class="line">	method: <span class="string">"GET"</span>,</span><br><span class="line">	mode: <span class="string">'cors'</span>,</span><br><span class="line">	headers: &#123;</span><br><span class="line">		Accept : <span class="string">'application/json'</span></span><br><span class="line">        <span class="comment">// 'Content-Type': 'application/x-www-form-urlencoded',</span></span><br><span class="line">        <span class="comment">// 'Access-Control-Allow-Origin': '*'</span></span><br><span class="line">      &#125;,</span><br><span class="line">		jsonpCallbackFunction: <span class="string">'showLocation'</span></span><br><span class="line">    &#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> response.json()</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="comment">//此处对获得的结果进行处理</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+        <p>默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>在 table 外组件上添加属性：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whiteSpace: <span class="string">'normal'</span>, <span class="attr">wordBreak</span>: <span class="string">'break-all'</span>, <span class="attr">wordWrap</span>: <span class="string">'break-word'</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -192,7 +187,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">table</a>
         		</li>
       		
 		</ul>
@@ -248,7 +243,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/17/React小项目走过的坑/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/11/允许长数字或者长单词自动折断/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,15 +257,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/18/队列顺序与组顺序/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/11/表头和内容不对齐/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          队顺序与组顺序
+          表头和内容不对齐
         
       </div>
     </a>
   
+  
+    <a href="/2019/04/27/数据库新建多边形-计算点是否在多边形内/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库新建多边形+计算点是否在多边形内</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -299,8 +299,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/04/17/React小项目走过的坑/", 
-    sourceId: "React小项目走过的坑",
+    url: "http://yoursite.com/2019/05/11/允许长数字或者长单词自动折断/", 
+    sourceId: "允许长数字或者长单词自动折断",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
