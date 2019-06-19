@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>数据库新建多边形+计算点是否在多边形内 | ConfusedBear熊小维</title>
+  <title>服务器搭建postgreSQL | ConfusedBear熊小维</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 数据库新建GEOMTRY多边形类型字段新建数据类型字段geom_fence，选择类型为（type) 2 将经纬度转换为POLYGON类型保存123UPDATE tr_qa_scenesSET geom_fence = ST_GeomFromText (&apos;POLYGON((119.206801 29.381917,119.22103 29.360262,119.233247 29.383302,">
-<meta name="keywords" content="Postgre">
+  <meta name="description" content="centOS搭建postgreSQL，进行到监听对外端口的时候，按照教程将listen_address = ‘*’了，也将pg_hba.conf文件中的host all all 0.0.0.0/0 md5设置好了，外面仍然无法连接到，内部检查发现监听端口还是127.0.0.0。  官方文档讲解： Specifies the TCP/IP address(es) on which the serve">
+<meta name="keywords" content="postgre">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库新建多边形+计算点是否在多边形内">
-<meta property="og:url" content="http://yoursite.com/2019/04/27/数据库新建多边形-计算点是否在多边形内/index.html">
+<meta property="og:title" content="服务器搭建postgreSQL">
+<meta property="og:url" content="http://yoursite.com/2019/06/19/服务器搭建postgreSQL/index.html">
 <meta property="og:site_name" content="ConfusedBear熊小维">
-<meta property="og:description" content="1 数据库新建GEOMTRY多边形类型字段新建数据类型字段geom_fence，选择类型为（type) 2 将经纬度转换为POLYGON类型保存123UPDATE tr_qa_scenesSET geom_fence = ST_GeomFromText (&apos;POLYGON((119.206801 29.381917,119.22103 29.360262,119.233247 29.383302,">
+<meta property="og:description" content="centOS搭建postgreSQL，进行到监听对外端口的时候，按照教程将listen_address = ‘*’了，也将pg_hba.conf文件中的host all all 0.0.0.0/0 md5设置好了，外面仍然无法连接到，内部检查发现监听端口还是127.0.0.0。  官方文档讲解： Specifies the TCP/IP address(es) on which the serve">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-27T16:55:06.000Z">
+<meta property="og:updated_time" content="2019-06-19T06:03:34.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库新建多边形+计算点是否在多边形内">
-<meta name="twitter:description" content="1 数据库新建GEOMTRY多边形类型字段新建数据类型字段geom_fence，选择类型为（type) 2 将经纬度转换为POLYGON类型保存123UPDATE tr_qa_scenesSET geom_fence = ST_GeomFromText (&apos;POLYGON((119.206801 29.381917,119.22103 29.360262,119.233247 29.383302,">
+<meta name="twitter:title" content="服务器搭建postgreSQL">
+<meta name="twitter:description" content="centOS搭建postgreSQL，进行到监听对外端口的时候，按照教程将listen_address = ‘*’了，也将pg_hba.conf文件中的host all all 0.0.0.0/0 md5设置好了，外面仍然无法连接到，内部检查发现监听端口还是127.0.0.0。  官方文档讲解： Specifies the TCP/IP address(es) on which the serve">
   
     <link rel="alternative" href="/atom.xml" title="ConfusedBear熊小维" type="application/atom+xml">
   
@@ -151,32 +151,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据库新建多边形-计算点是否在多边形内" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-服务器搭建postgreSQL" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据库新建多边形+计算点是否在多边形内
+      服务器搭建postgreSQL
     </h1>
   
 
         
-        <a href="/2019/04/27/数据库新建多边形-计算点是否在多边形内/" class="archive-article-date">
-  	<time datetime="2019-04-27T14:14:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
+        <a href="/2019/06/19/服务器搭建postgreSQL/" class="archive-article-date">
+  	<time datetime="2019-06-19T05:56:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-数据库新建GEOMTRY多边形类型字段"><a href="#1-数据库新建GEOMTRY多边形类型字段" class="headerlink" title="1 数据库新建GEOMTRY多边形类型字段"></a>1 数据库新建GEOMTRY多边形类型字段</h2><p>新建数据类型字段geom_fence，选择类型为（type)</p>
-<h2 id="2-将经纬度转换为POLYGON类型保存"><a href="#2-将经纬度转换为POLYGON类型保存" class="headerlink" title="2 将经纬度转换为POLYGON类型保存"></a>2 将经纬度转换为POLYGON类型保存</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> tr_qa_scenes</span><br><span class="line"><span class="keyword">SET</span> geom_fence = ST_GeomFromText (<span class="string">'POLYGON((119.206801 29.381917,119.22103 29.360262,119.233247 29.383302,119.206801 29.381917))'</span>,<span class="number">4326</span>)</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="string">'26'</span></span><br></pre></td></tr></table></figure>
-<p>转变后为：</p>
-<p>0103000020E61000000100000004000000EDF1423A3CCD5D4054C90050C5613D40D55B035B25CE5D40D6FD63213A5C3D40F838D384EDCE5D40CC7D721420623D40EDF1423A3CCD5D4054C90050C5613D40</p>
-<h2 id="3-判断点与多边形进行对比，判断在内在外"><a href="#3-判断点与多边形进行对比，判断在内在外" class="headerlink" title="3 判断点与多边形进行对比，判断在内在外"></a>3 判断点与多边形进行对比，判断在内在外</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,ST_Contains(</span><br><span class="line">	geom_fence,ST_GeomFromText(<span class="string">'POINT(120.15701 30.236863)'</span>,<span class="number">4326</span>)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">FROM</span> tr_qa_scenes</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="string">'1'</span></span><br></pre></td></tr></table></figure>
-<p>正确返回True，错误返回False</p>
+        <p>centOS搭建postgreSQL，进行到监听对外端口的时候，按照教程将listen_address = ‘*’了，也将pg_hba.conf文件中的host all all 0.0.0.0/0 md5设置好了，外面仍然无法连接到，内部检查发现监听端口还是127.0.0.0。</p>
+<blockquote>
+<p>官方文档讲解：</p>
+<p>Specifies the TCP/IP address(es) on which the server is to listen for connections from client applications. The value takes the form of a comma-separated list of host names and/or numeric IP addresses. The special entry <code>*</code> corresponds to all available IP interfaces. The entry <code>0.0.0.0</code> allows listening for all IPv4 addresses and <code>::</code> allows listening for all IPv6 addresses</p>
+</blockquote>
+<p>按照官方文档，还可以将listen_address设置为0.0.0.0，设置完后，瞬间可以访问了~</p>
 
       
 
@@ -190,7 +190,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Postgre</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">postgre</a>
         		</li>
       		
 		</ul>
@@ -246,7 +246,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/27/数据库新建多边形-计算点是否在多边形内/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/19/服务器搭建postgreSQL/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,18 +260,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/11/允许长数字或者长单词自动折断/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          允许长数字或者长单词自动折断
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/20/Python爬虫安装报错解决办法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Python爬虫安装报错解决办法</div>
+    <a href="/2019/05/11/hexo的坑/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo的坑</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -302,8 +293,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/04/27/数据库新建多边形-计算点是否在多边形内/", 
-    sourceId: "数据库新建多边形-计算点是否在多边形内",
+    url: "http://yoursite.com/2019/06/19/服务器搭建postgreSQL/", 
+    sourceId: "服务器搭建postgreSQL",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
