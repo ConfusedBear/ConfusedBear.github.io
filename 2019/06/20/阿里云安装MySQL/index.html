@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ConfusedBear熊小维">
 <meta property="og:description" content="1.环境准备阿里云主机一台（1 vCPU，2 GiB，有公网IP） 1.1 开放MySQL 3306 端口：更多 -&amp;gt; 网络和安全组 -&amp;gt; 安全组配置 -&amp;gt; 配置规则 -&amp;gt; 添加安全组规则 端口范围选择 3306/3306 授权对象选择 0.0.0.0/0 2.下载安装登录官网https://dev.mysql.com/downloads/repo/yum/ 2.1 获取">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-20T12:28:44.687Z">
+<meta property="og:updated_time" content="2019-06-20T12:31:50.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云安装MySQL">
 <meta name="twitter:description" content="1.环境准备阿里云主机一台（1 vCPU，2 GiB，有公网IP） 1.1 开放MySQL 3306 端口：更多 -&amp;gt; 网络和安全组 -&amp;gt; 安全组配置 -&amp;gt; 配置规则 -&amp;gt; 添加安全组规则 端口范围选择 3306/3306 授权对象选择 0.0.0.0/0 2.下载安装登录官网https://dev.mysql.com/downloads/repo/yum/ 2.1 获取">
@@ -178,6 +178,7 @@
 <h1 id="2-下载安装"><a href="#2-下载安装" class="headerlink" title="2.下载安装"></a>2.下载安装</h1><p>登录官网<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a></p>
 <h4 id="2-1-获取-yum-源"><a href="#2-1-获取-yum-源" class="headerlink" title="2.1 获取 yum 源"></a>2.1 获取 yum 源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget [http://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm](http://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm)</span><br></pre></td></tr></table></figure>
 <h4 id="2-2-添加-yum-源"><a href="#2-2-添加-yum-源" class="headerlink" title="2.2 添加 yum 源"></a>2.2 添加 yum 源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum localinstall mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="2-3-选择安装版本-可选"><a href="#2-3-选择安装版本-可选" class="headerlink" title="2.3 选择安装版本 [可选]"></a>2.3 选择安装版本 [可选]</h4><p>默认安装最新版 MySQL ，如果希望下载旧版，如5.7，则需要修改源设置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.repos.d/mysql-community.repo</span><br></pre></td></tr></table></figure>
 <p>找到</p>
@@ -473,19 +474,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">table</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">postgre</a>
+                <a href="javascript:void(0)" class="js-tag color1">table</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,11 +494,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">postgre</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">逻辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
             
             <div class="clearfix"></div>
