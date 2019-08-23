@@ -351,8 +351,15 @@
                 <span>SpringBoot进阶笔记</span>
         </a>
         <div class="abstract-content">
-            表单验证修改 Luckymoney对象12@Min(value = 1, message = "红包太小禁止发送")private BigDecimal money;
-修改 LuckymoneyController1234567891011// 创建红包@PostMapping("/luckymoneys")public Luckymoney create(@Valid Luckymoney luckymoney, BindingResult bindingResult)&#123;	if(bindingResult.hasErrors())&#123;  		System.out.pr...
+            <h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h1><h4 id="修改-Luckymoney对象"><a href="#修改-Luckymoney对象" class="headerlink" title="修改 Luckymoney对象"></a>修改 Luckymoney对象</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Min</span>(value = <span class="number">1</span>, message = <span class="string">"红包太小禁止发送"</span>)</span><br><span class="line"><span class="keyword">private</span> BigDecimal money;</span><br></pre></td></tr></table></figure>
+<h4 id="修改-LuckymoneyController"><a href="#修改-LuckymoneyController" class="headerlink" title="修改 LuckymoneyController"></a>修改 LuckymoneyController</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建红包</span></span><br><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/luckymoneys"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Luckymoney <span class="title">create</span><span class="params">(@Valid Luckymoney luckymoney, BindingResult bindingResult)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(bindingResult.hasErrors())&#123;</span><br><span class="line">  		System.out.println(bindingResult.getFieldError().getDefaultMessage());</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	luckymoney.setProducer(producer);</span><br><span class="line">	luckymoney.setMoney(money);</span><br><span class="line">	<span class="keyword">return</span> repository.save(luckymoney);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="AOP-统一处理请求日志"><a href="#AOP-统一处理请求日志" class="headerlink" title="AOP 统一处理请求日志"></a>AOP 统一处理请求日志</h1><p>AOP 是一种编程范式，与语言无关，是一种程序设计思想</p>
+<p>面向切面（AOP）Aspect Oriented Programming</p>
+<p>面向对象（OOP）Object Oriented Programming</p>
+<p>面向过程（POP）Procedure Oriented Programming</p>
+<p>AOP 将通用逻辑从业务逻辑中分离出来</p>
+<h4 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="新建-HttpAspect-java"><a href="#新建-HttpAspect-java" class="headerlink" title="新建 HttpAspect.java"></a>新建 HttpAspect.java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpAspect</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 对 List 方法进行拦截</span></span><br><span class="line">  <span class="meta">@Before</span>(<span class="string">"execution(public * com.imooc.controller.LuckymoneysController.list(..))"</span>)</span><br><span class="line">  <span class="comment">// 对所有方法都拦截</span></span><br><span class="line">  <span class="meta">@Before</span>(<span class="string">"execution(public * com.imooc.controller.LuckymoneysController.*(..))"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@After</span>(<span class="string">"execution(public * com.imooc.controller.LuckymoneysController.*(..))"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -423,7 +430,7 @@
 <p>端口范围选择 3306/3306</p>
 <p>授权对象选择 0.0.0.0/0</p>
 <h1 id="2-下载安装"><a href="#2-下载安装" class="headerlink" title="2.下载安装"></a>2.下载安装</h1><p>登录官网<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a></p>
-<h4 id="2-1-获取-yum-源"><a href="#2-1-获取-yum-源" class="headerlink" title="2.1 获取 yum 源"></a>2.1 获取 yum 源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget [http://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm](http://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm)</span><br></pre></td></tr></table></figure>
+<h4 id="2-1-获取-yum-源"><a href="#2-1-获取-yum-源" class="headerlink" title="2.1 获取 yum 源"></a>2.1 获取 yum 源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
 <h4 id="2-2-添加-yum-源"><a href="#2-2-添加-yum-源" class="headerlink" title="2.2 添加 yum 源"></a>2.2 添加 yum 源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum localinstall mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
         </div>
         <div class="abstract-post-meta">
@@ -887,8 +894,6 @@ https://github.com/simonflueckiger/tesserocr-windows_build/releases
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 11
@@ -927,17 +932,17 @@ https://github.com/simonflueckiger/tesserocr-windows_build/releases
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/表头和内容不对齐/">表头和内容不对齐</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/hexo的坑/">hexo的坑</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/允许长数字或者长单词自动折断/">允许长数字或者长单词自动折断</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/表头和内容不对齐/">表头和内容不对齐</a>
         </li>
     
     
@@ -967,19 +972,19 @@ https://github.com/simonflueckiger/tesserocr-windows_build/releases
     
         <span class="sidebar-tag-name" data-tags="Python爬虫"><span class="iconfont-archer">&#xe606;</span>Python爬虫</span>
     
-        <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
-    
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
     
         <span class="sidebar-tag-name" data-tags="table"><span class="iconfont-archer">&#xe606;</span>table</span>
     
-        <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
-    
         <span class="sidebar-tag-name" data-tags="postgre"><span class="iconfont-archer">&#xe606;</span>postgre</span>
     
-        <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
-    
         <span class="sidebar-tag-name" data-tags="逻辑"><span class="iconfont-archer">&#xe606;</span>逻辑</span>
+    
+        <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
+    
+        <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
         <span class="sidebar-tag-name" data-tags="SpringBoot"><span class="iconfont-archer">&#xe606;</span>SpringBoot</span>
     
