@@ -346,29 +346,26 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/06/20/阿里云安装MySQL/">
+        <a class="abstract-title" href="/2019/08/28/Mac停止端口进程/">
             
-                <span>阿里云安装MySQL</span>
+                <span>Mac停止端口进程</span>
         </a>
         <div class="abstract-content">
-            <h1 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h1><p>阿里云主机一台（1 vCPU，2 GiB，有公网IP）</p>
-<h4 id="1-1-开放MySQL-3306-端口："><a href="#1-1-开放MySQL-3306-端口：" class="headerlink" title="1.1 开放MySQL 3306 端口："></a>1.1 开放MySQL 3306 端口：</h4><p>更多 -&gt; 网络和安全组 -&gt; 安全组配置 -&gt; 配置规则 -&gt; 添加安全组规则</p>
-<p>端口范围选择 3306/3306</p>
-<p>授权对象选择 0.0.0.0/0</p>
-<h1 id="2-下载安装"><a href="#2-下载安装" class="headerlink" title="2.下载安装"></a>2.下载安装</h1><p>登录官网<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a></p>
-<h4 id="2-1-获取-yum-源"><a href="#2-1-获取-yum-源" class="headerlink" title="2.1 获取 yum 源"></a>2.1 获取 yum 源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-添加-yum-源"><a href="#2-2-添加-yum-源" class="headerlink" title="2.2 添加 yum 源"></a>2.2 添加 yum 源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum localinstall mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+            「应用场景」在命令行打开了某个端口的服务，但是忘记关闭端口服务就关闭了命令行
+「解决办法」123npm install -g xl_close_portxl_close_port -p 8082
+「实例效果」
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/20</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/28</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Port">Port</a>
     
 </div>
             
