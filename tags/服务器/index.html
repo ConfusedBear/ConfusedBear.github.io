@@ -346,164 +346,34 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/允许长数字或者长单词自动折断/">
+        <a class="abstract-title" href="/2019/08/30/React发布到服务器/">
             
-                <span>允许长数字或者长单词自动折断</span>
+                <span>React发布到服务器</span>
         </a>
         <div class="abstract-content">
-            默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的
-解决办法在 table 外组件上添加属性：
-1whiteSpace: 'normal', wordBreak: 'break-all', wordWrap: 'break-word'
-
+            编译React进入需要打包发布的React项目内进行编译：
+1npm run build
+打包后的目标文件夹即为 build 
+上传到服务器上传的是一整个文件夹：
+1scp -r build root@sbw:/root/build
+服务器安装Nodejs+npm首先安装 EPEL ，这是企业版Linux的额外软件包，为CentOS提供默认不提供的软件包
+1yum install epel-release
+接着就可以安装Nodejs+npm了：
+12sudo yum install nodejssudo yum install npm
+安装完成后检查版本
+12node -vnpm -v
+...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/30</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/27/数据库新建多边形-计算点是否在多边形内/">
-            
-                <span>数据库新建多边形+计算点是否在多边形内</span>
-        </a>
-        <div class="abstract-content">
-            1 数据库新建GEOMTRY多边形类型字段新建数据类型字段geom_fence，选择类型为（type)
-2 将经纬度转换为POLYGON类型保存123UPDATE tr_qa_scenesSET geom_fence = ST_GeomFromText ('POLYGON((119.206801 29.381917,119.22103 29.360262,119.233247 29.383302,119.206801 29.381917))',4326)WHERE id = '26'
-转变后为：
-0103000020E61000000100000004000000EDF1423A3CCD...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Postgre">Postgre</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/20/Python爬虫安装报错解决办法/">
-            
-                <span>Python爬虫安装报错解决办法</span>
-        </a>
-        <div class="abstract-content">
-            参考书籍：Python 3网络爬虫开发实战.pdf1 tesserocr安装问题安装完tesseract后安装tesserocr 使用Pip安装始终报错
-
-解决方案
-是使用编译好的.whl文件进行安装 .whl的下载地址为：
-https://github.com/simonflueckiger/tesserocr-windows_build/releases
-
-都安装好后试用时报错，无法识别且报错RuntimeError: Failed to init API, possibly an invalid tessdata
-
-解决方案
-将安装的Tesseract_OCR的tessdata的目...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Python爬虫">Python爬虫</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/18/队列顺序与组顺序/">
-            
-                <span>队顺序与组顺序</span>
-        </a>
-        <div class="abstract-content">
-            <p>今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，因为题目都是一个个的按照队的顺序来存储，但是用的时候需要按组来拿出题目展示，现在完成了任务，来梳理一下：</p>
-<h4 id="队顺序"><a href="#队顺序" class="headerlink" title="队顺序"></a>队顺序</h4><p>即从0开始逐个递增的队列顺序</p>
-<h4 id="组顺序"><a href="#组顺序" class="headerlink" title="组顺序"></a>组顺序</h4><p>队列中若干个为一组，组号也从0开始逐个递增</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>队序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</p>
-<p>组序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7   8</p>
-<p>参数        0 0 0 3 = = = 0 0 0  5   =   =    =   =   =   0</p>
-<blockquote>
-<p>参数代表该组第一个后还剩下几个</p>
-</blockquote>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="逻辑">逻辑</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/17/React小项目走过的坑/">
-            
-                <span>React小项目走过的坑</span>
-        </a>
-        <div class="abstract-content">
-            花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。
-Cookie获取起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。
-但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cookies（这个插件的下载数还有前面的几十分之一，取名还这么像，莫不是碰瓷的），大多数只适应于前端页面自己存自己取，对于后台传进来的Cookie，虽然浏览器可以看得到，但是目前还没有什么好办法可以获...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="React">React</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="服务器">服务器</a>
     
 </div>
             
@@ -511,10 +381,6 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2019/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-    </nav>
     
 </main>
             <!-- profile -->
