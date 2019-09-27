@@ -359,6 +359,110 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/06/25/SpringBoot入门笔记/">
+            
+                <span>SpringBoot 制作红包笔记</span>
+        </a>
+        <div class="abstract-content">
+            <h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123; </span><br><span class="line">	<span class="comment">//SpringBoot 2.X 写法 </span></span><br><span class="line">	<span class="meta">@GetMapping</span>(<span class="string">"/hello"</span>) </span><br><span class="line">	<span class="comment">//SpringBoot 1.X 写法 </span></span><br><span class="line">	<span class="meta">@RequestMapping</span>(value = <span class="string">"/hello"</span>, method = RequestMethod.GET) </span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">say</span><span class="params">()</span></span>&#123; </span><br><span class="line">		<span class="keyword">return</span> <span class="string">"Hello"</span>;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="maven-启动-SpringBoot"><a href="#maven-启动-SpringBoot" class="headerlink" title="maven 启动 SpringBoot"></a>maven 启动 SpringBoot</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run</span><br></pre></td></tr></table></figure>
+<h4 id="maven-打包"><a href="#maven-打包" class="headerlink" title="maven 打包"></a>maven 打包</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean <span class="keyword">package</span></span><br></pre></td></tr></table></figure>
+<h4 id="java-运行-jar-包"><a href="#java-运行-jar-包" class="headerlink" title="java 运行 jar 包"></a>java 运行 jar 包</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar target/luckymoney.jar</span><br></pre></td></tr></table></figure>
+<h2 id="配置-application-properties"><a href="#配置-application-properties" class="headerlink" title="配置 application.properties"></a>配置 application.properties</h2><h4 id="修改端口号"><a href="#修改端口号" class="headerlink" title="修改端口号"></a>修改端口号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.port = 8081</span><br></pre></td></tr></table></figure>
+<h4 id="修改-ContextPath"><a href="#修改-ContextPath" class="headerlink" title="修改 ContextPath"></a>修改 ContextPath</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.servlet.context-path=/luckymoney</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>访问 hello 从 localhost:8080/hello 变成了 localhost:8081/luckymoney/hello</p>
+</blockquote>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="SpringBoot">SpringBoot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/20/阿里云安装MySQL/">
+            
+                <span>阿里云安装MySQL</span>
+        </a>
+        <div class="abstract-content">
+            <h1 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h1><p>阿里云主机一台（1 vCPU，2 GiB，有公网IP）</p>
+<h4 id="1-1-开放MySQL-3306-端口："><a href="#1-1-开放MySQL-3306-端口：" class="headerlink" title="1.1 开放MySQL 3306 端口："></a>1.1 开放MySQL 3306 端口：</h4><p>更多 -&gt; 网络和安全组 -&gt; 安全组配置 -&gt; 配置规则 -&gt; 添加安全组规则</p>
+<p>端口范围选择 3306/3306</p>
+<p>授权对象选择 0.0.0.0/0</p>
+<h1 id="2-下载安装"><a href="#2-下载安装" class="headerlink" title="2.下载安装"></a>2.下载安装</h1><p>登录官网<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a></p>
+<h4 id="2-1-获取-yum-源"><a href="#2-1-获取-yum-源" class="headerlink" title="2.1 获取 yum 源"></a>2.1 获取 yum 源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-添加-yum-源"><a href="#2-2-添加-yum-源" class="headerlink" title="2.2 添加 yum 源"></a>2.2 添加 yum 源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum localinstall mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/19/服务器搭建postgreSQL/">
+            
+                <span>服务器搭建postgreSQL</span>
+        </a>
+        <div class="abstract-content">
+            centOS搭建postgreSQL，进行到监听对外端口的时候，按照教程将listen_address = ‘*’了，也将pg_hba.conf文件中的host all all 0.0.0.0/0 md5设置好了，外面仍然无法连接到，内部检查发现监听端口还是127.0.0.0。
+
+官方文档讲解：
+Specifies the TCP/IP address(es) on which the server is to listen for connections from client applications. The value takes the form of a comma-sepa...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/19</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="postgre">postgre</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/05/11/hexo的坑/">
             
                 <span>hexo的坑</span>
@@ -963,9 +1067,90 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 17
+        Total : 20
         </div>
         <!-- search  -->
         
@@ -978,6 +1163,21 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span><a class="archive-post-title" href="/2019/09/27/IOS下的newDate兼容性问题/">IOS下的newDate兼容性问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/24</span><a class="archive-post-title" href="/2019/09/24/playframework两种使用数据库的方法/">playframework两种使用数据库的方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/20</span><a class="archive-post-title" href="/2019/09/20/Mac和Linux快速测试端口状态/">Mac和Linux快速测试端口状态</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1031,7 +1231,7 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/允许长数字或者长单词自动折断/">允许长数字或者长单词自动折断</a>
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/hexo的坑/">hexo的坑</a>
         </li>
     
     
@@ -1041,7 +1241,7 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/hexo的坑/">hexo的坑</a>
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/允许长数字或者长单词自动折断/">允许长数字或者长单词自动折断</a>
         </li>
     
     
@@ -1069,6 +1269,8 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="兼容问题"><span class="iconfont-archer">&#xe606;</span>兼容问题</span>
+    
         <span class="sidebar-tag-name" data-tags="Port"><span class="iconfont-archer">&#xe606;</span>Port</span>
     
         <span class="sidebar-tag-name" data-tags="PDF"><span class="iconfont-archer">&#xe606;</span>PDF</span>
@@ -1077,17 +1279,21 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
         <span class="sidebar-tag-name" data-tags="Python爬虫"><span class="iconfont-archer">&#xe606;</span>Python爬虫</span>
     
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
         <span class="sidebar-tag-name" data-tags="服务器"><span class="iconfont-archer">&#xe606;</span>服务器</span>
     
         <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
         <span class="sidebar-tag-name" data-tags="ss"><span class="iconfont-archer">&#xe606;</span>ss</span>
+    
+        <span class="sidebar-tag-name" data-tags="端口"><span class="iconfont-archer">&#xe606;</span>端口</span>
     
         <span class="sidebar-tag-name" data-tags="地理围栏"><span class="iconfont-archer">&#xe606;</span>地理围栏</span>
     
         <span class="sidebar-tag-name" data-tags="table"><span class="iconfont-archer">&#xe606;</span>table</span>
+    
+        <span class="sidebar-tag-name" data-tags="play"><span class="iconfont-archer">&#xe606;</span>play</span>
     
         <span class="sidebar-tag-name" data-tags="postgre"><span class="iconfont-archer">&#xe606;</span>postgre</span>
     
