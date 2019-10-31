@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>熊小维&#39;s Studio</title>
+    <title>小程序开发前期设置 · 熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">熊小维&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">小程序开发前期设置</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">熊小维's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            小程序开发前期设置
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="webstorm">webstorm</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">214</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,105 +399,103 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/hexo的坑/">
-            
-                <span>hexo的坑</span>
-        </a>
-        <div class="abstract-content">
-            1 直接在 source -&gt; _posts 里生成Md文件是无效的，总是要走 hexo new 这一步的
-2 md文件里面使用了
-1scroll = &#123;&#123;y : 600&#125;&#125;
-其中的两个大括号会导致 hexo g 时报错。。。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>小程序开发工具中，打开 <code>增强编译</code> 和 <code>不校验合法域名</code></p>
+<blockquote>
+<p>增强编译是为了让小程序支持 async await (ES7语法)</p>
+</blockquote>
+<h2 id="npm编译"><a href="#npm编译" class="headerlink" title="npm编译"></a>npm编译</h2><p>小程序开发工具 - 工具 - 构建npm</p>
+<h1 id="WebStorm"><a href="#WebStorm" class="headerlink" title="WebStorm"></a>WebStorm</h1><h2 id="wxss文件rpx单位报错"><a href="#wxss文件rpx单位报错" class="headerlink" title="wxss文件rpx单位报错"></a>wxss文件rpx单位报错</h2><p>Preferences - Inspections - CSS - Invalid elements - Invalid CSS property value </p>
+<p><strong>取消对勾</strong></p>
+<h2 id="代码无法编辑"><a href="#代码无法编辑" class="headerlink" title="代码无法编辑"></a>代码无法编辑</h2><p>Preferences - Plugins </p>
+<p><strong>删除IdeaVim插件</strong></p>
+<h2 id="未高亮wxml和wxss"><a href="#未高亮wxml和wxss" class="headerlink" title="未高亮wxml和wxss"></a>未高亮wxml和wxss</h2><p>Preferences - File Types </p>
+<p><strong>选择 Cascading Style Sheet 再添加.wxss文件到下方的列表中</strong></p>
+<h2 id="格式化代码后rpx单位前会多空格"><a href="#格式化代码后rpx单位前会多空格" class="headerlink" title="格式化代码后rpx单位前会多空格"></a>格式化代码后rpx单位前会多空格</h2><blockquote>
+<p>Preferences - File Watchers - 添加一个<custom> </custom></p>
+</blockquote>
+<p><strong>Windows/Macos</strong></p>
+<p>File type: Cascading Style Sheet</p>
+<p>Scope: All Places</p>
+<p>Output paths to refresh: </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>FilePath$</span><br></pre></td></tr></table></figure>
+<p><strong>Windows</strong></p>
+<p>先下载一个sed.exe 下载地址：<a href="https://github.com/mbuilov/sed-windows" target="_blank" rel="noopener">https://github.com/mbuilov/sed-windows</a></p>
+<p>Program：D:/……../sed.exe</p>
+<p>Arguments：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-i s/"\ rpx"/rpx/g $FilePath$</span><br></pre></td></tr></table></figure>
+<p><strong>MacOS</strong></p>
+<p>Program：sed</p>
+<p>Arguments：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i "" s/"\ rpx"/rpx/g $FilePath$</span><br></pre></td></tr></table></figure>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p>格式化后rpx前会先有空格，然后消失</p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/表头和内容不对齐/">
-            
-                <span>表头和内容不对齐</span>
-        </a>
-        <div class="abstract-content">
-            在使用antd的table组件时，由于需求需要用到表头固定的table组件，示例用法是设置其中某一列的width就可以自动固定住表头，同时由于内容行数很多，还需要可以上下滚动，所以还要设置 scroll= y : 600，实际用的时候由于列比较多，一旦使用 scroll 属性，就会发现表头和内容的列宽度根本没有对齐，而且由于table列宽默认是自动计算的，改变浏览器大小的话，列宽也都会自动改变，而且还是不对齐
-解决办法123456789101112 table &#123;     table-layout:fixed; &#125; .resultColumns &#123;     ...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">熊小维</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/10/28/小程序开发前期设置/">http://yoursite.com/2019/10/28/小程序开发前期设置/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/10/28/小程序开发前期设置/">October 28th 2019, 10:34:40 am</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/10/28/小程序开发前期设置/">October 29th 2019, 7:29:11 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/允许长数字或者长单词自动折断/">
-            
-                <span>允许长数字或者长单词自动折断</span>
-        </a>
-        <div class="abstract-content">
-            默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的
-解决办法在 table 外组件上添加属性：
-1whiteSpace: 'normal', wordBreak: 'break-all', wordWrap: 'break-word'
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/10/28/前端:小程序开发笔记/" title="前端/小程序开发笔记">
+                    <div class="nextTitle">前端/小程序开发笔记</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/09/27/IOS下的newDate兼容性问题/" title="IOS下的newDate兼容性问题">
+                    <div class="prevTitle">IOS下的newDate兼容性问题</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "http://yoursite.com/2019/10/28/小程序开发前期设置/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "小程序开发前期设置"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://confusedbear-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -518,6 +577,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小程序"><span class="toc-number">1.</span> <span class="toc-text">小程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前期准备"><span class="toc-number">1.1.</span> <span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm编译"><span class="toc-number">1.2.</span> <span class="toc-text">npm编译</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WebStorm"><span class="toc-number">2.</span> <span class="toc-text">WebStorm</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#wxss文件rpx单位报错"><span class="toc-number">2.1.</span> <span class="toc-text">wxss文件rpx单位报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码无法编辑"><span class="toc-number">2.2.</span> <span class="toc-text">代码无法编辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未高亮wxml和wxss"><span class="toc-number">2.3.</span> <span class="toc-text">未高亮wxml和wxss</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式化代码后rpx单位前会多空格"><span class="toc-number">2.4.</span> <span class="toc-text">格式化代码后rpx单位前会多空格</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#效果"><span class="toc-number">2.4.0.1.</span> <span class="toc-text">效果</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1075,6 +1152,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

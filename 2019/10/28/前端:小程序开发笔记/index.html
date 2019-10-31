@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>熊小维&#39;s Studio</title>
+    <title>前端/小程序开发笔记 · 熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">熊小维&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">前端/小程序开发笔记</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">熊小维's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            前端/小程序开发笔记
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="开发规范">开发规范</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">672</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,105 +399,111 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/hexo的坑/">
-            
-                <span>hexo的坑</span>
-        </a>
-        <div class="abstract-content">
-            1 直接在 source -&gt; _posts 里生成Md文件是无效的，总是要走 hexo new 这一步的
-2 md文件里面使用了
-1scroll = &#123;&#123;y : 600&#125;&#125;
-其中的两个大括号会导致 hexo g 时报错。。。
+            <main class="main post-page">
+    <article class="article-entry">
+        <p><strong>前端JS</strong>不应该用于<strong>业务逻辑</strong>，而是应该用于<strong>数据绑定</strong></p>
+<p><strong>前端MVC</strong>：view视图层 业务逻辑层 桥梁 中间层；</p>
+<p>支持<strong>对象的传参</strong>：在方法的入参里面加入大括号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> request(&#123;url, data, callback&#125;)</span><br></pre></td></tr></table></figure>
+<p>三种<strong>异步请求</strong>思路：</p>
+<blockquote>
+<p> 小程序云开发中，有的函数如果不传success，默认会认为你希望获得一个promise的返回结果</p>
+</blockquote>
+<h4 id="callback"><a href="#callback" class="headerlink" title="callback"></a>callback</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> read = <span class="function"><span class="keyword">function</span>(<span class="params">fileName</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">        fs.readFile(fileName,(err,data)=&gt;&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                reject(err);</span><br><span class="line">            &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">                resolve(data);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line">read(<span class="string">'1.txt'</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.toString());</span><br><span class="line">    <span class="keyword">return</span> read(<span class="string">'2.txt'</span>);  <span class="comment">// 返回新的数据，然后输出</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.toString());</span><br><span class="line">    <span class="keyword">return</span> read(<span class="string">'3.txt'</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.toString());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="async-await"><a href="#async-await" class="headerlink" title="async await"></a>async await</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> read = <span class="function"><span class="keyword">function</span>(<span class="params">fileName</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">        fs.readFile(fileName,(err,data)=&gt;&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                reject(err);</span><br><span class="line">            &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">                resolve(data);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">readByAsync</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a1 = <span class="keyword">await</span> read(<span class="string">'1.txt'</span>);</span><br><span class="line">    <span class="keyword">let</span> a2 = <span class="keyword">await</span> read(<span class="string">'2.txt'</span>);</span><br><span class="line">    <span class="keyword">let</span> a3 = <span class="keyword">await</span> read(<span class="string">'3.txt'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a1.toString());</span><br><span class="line">    <span class="built_in">console</span>.log(a2.toString());</span><br><span class="line">    <span class="built_in">console</span>.log(a3.toString());</span><br><span class="line">&#125;</span><br><span class="line">readByAsync();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个函数和generator函数有些类似，从例子中可以看得出来，async函数在function前面有个async作为标识，意思就是异步函数，里面有个await搭配使用，每到await的地方就是程序需要等待执行后面的程序，语义化很强，下面总结一下<strong>async函数的特点</strong>：</p>
+<ul>
+<li>语义化强</li>
+<li>里面的await只能在async函数中使用</li>
+<li>await后面的语句可以是promise对象、数字、字符串等</li>
+<li>async函数返回的是一个Promsie对象</li>
+<li>await语句后的Promise对象变成reject状态时，那么整个async函数会中断，后面的程序不会继续执行</li>
+</ul>
+</blockquote>
+<h4 id="将小程序内置非Promise-API转换为Promise（代理模式）"><a href="#将小程序内置非Promise-API转换为Promise（代理模式）" class="headerlink" title="将小程序内置非Promise API转换为Promise（代理模式）"></a>将小程序内置非Promise API转换为Promise（代理模式）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promisic = <span class="function"><span class="keyword">function</span> (<span class="params">func</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">params = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> args = <span class="built_in">Object</span>.assign(params, &#123;</span><br><span class="line">        success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          resolve(res);</span><br><span class="line">        &#125;,</span><br><span class="line">        fail: <span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">          reject(error);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      func(args);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>用法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原来</span></span><br><span class="line">wx.request(&#123;</span><br><span class="line">	url,</span><br><span class="line">  data,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 现在</span></span><br><span class="line">promisic(wx.request)(&#123;</span><br><span class="line">  url,</span><br><span class="line">  data,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="包版本号"><a href="#包版本号" class="headerlink" title="包版本号"></a>包版本号</h4><blockquote>
+<p>设版本号为1.2.3，则1为主要版本号 2为次要版本号 3为补丁版本号</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"dependencies": &#123;</span><br><span class="line">	"lin-ui": "~0.6.0"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中 <code>~</code> 表示当前0.6.X系列最新的包，同时如果包有嵌套的结构，也可以自动达到嵌套包自动更新的目的</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"dependencies"</span>: &#123;</span><br><span class="line">	<span class="string">"lin-ui"</span>: <span class="string">"^0.6.0"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中 <code>^</code> 表示当前0.X系列最新的包</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"dependencies"</span>: &#123;</span><br><span class="line">	<span class="string">"lin-ui"</span>: <span class="string">"latest"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>latest</code> 表示永远下载最新版本</p>
+</blockquote>
+<h4 id="初始化声明"><a href="#初始化声明" class="headerlink" title="初始化声明"></a>初始化声明</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid: <span class="built_in">Array</span> <span class="comment">// 适用于没有初始值</span></span><br></pre></td></tr></table></figure>
+<p>等同于</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grid: &#123;			<span class="comment">// 适用于有初始值</span></span><br><span class="line">	type: <span class="built_in">Array</span>,</span><br><span class="line">	value: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/表头和内容不对齐/">
-            
-                <span>表头和内容不对齐</span>
-        </a>
-        <div class="abstract-content">
-            在使用antd的table组件时，由于需求需要用到表头固定的table组件，示例用法是设置其中某一列的width就可以自动固定住表头，同时由于内容行数很多，还需要可以上下滚动，所以还要设置 scroll= y : 600，实际用的时候由于列比较多，一旦使用 scroll 属性，就会发现表头和内容的列宽度根本没有对齐，而且由于table列宽默认是自动计算的，改变浏览器大小的话，列宽也都会自动改变，而且还是不对齐
-解决办法123456789101112 table &#123;     table-layout:fixed; &#125; .resultColumns &#123;     ...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">熊小维</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/10/28/前端:小程序开发笔记/">http://yoursite.com/2019/10/28/前端:小程序开发笔记/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/10/28/前端:小程序开发笔记/">October 28th 2019, 8:14:15 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/10/28/前端:小程序开发笔记/">October 31st 2019, 10:49:08 am</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/允许长数字或者长单词自动折断/">
-            
-                <span>允许长数字或者长单词自动折断</span>
-        </a>
-        <div class="abstract-content">
-            默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的
-解决办法在 table 外组件上添加属性：
-1whiteSpace: 'normal', wordBreak: 'break-all', wordWrap: 'break-word'
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/10/28/小程序开发前期设置/" title="小程序开发前期设置">
+                    <div class="prevTitle">小程序开发前期设置</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "http://yoursite.com/2019/10/28/前端:小程序开发笔记/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "前端/小程序开发笔记"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://confusedbear-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -518,6 +585,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#callback"><span class="toc-number">1.</span> <span class="toc-text">callback</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#promise"><span class="toc-number">2.</span> <span class="toc-text">promise</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#async-await"><span class="toc-number">3.</span> <span class="toc-text">async await</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将小程序内置非Promise-API转换为Promise（代理模式）"><span class="toc-number">4.</span> <span class="toc-text">将小程序内置非Promise API转换为Promise（代理模式）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#包版本号"><span class="toc-number">5.</span> <span class="toc-text">包版本号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化声明"><span class="toc-number">6.</span> <span class="toc-text">初始化声明</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1075,6 +1160,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
