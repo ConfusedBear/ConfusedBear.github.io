@@ -346,56 +346,29 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/表头和内容不对齐/">
+        <a class="abstract-title" href="/2019/11/04/ssh端口转发及连接SQLserver/">
             
-                <span>表头和内容不对齐</span>
+                <span>ssh端口转发及连接SQLserver</span>
         </a>
         <div class="abstract-content">
-            在使用antd的table组件时，由于需求需要用到表头固定的table组件，示例用法是设置其中某一列的width就可以自动固定住表头，同时由于内容行数很多，还需要可以上下滚动，所以还要设置 scroll= y : 600，实际用的时候由于列比较多，一旦使用 scroll 属性，就会发现表头和内容的列宽度根本没有对齐，而且由于table列宽默认是自动计算的，改变浏览器大小的话，列宽也都会自动改变，而且还是不对齐
-解决办法123456789101112 table &#123;     table-layout:fixed; &#125; .resultColumns &#123;     ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
             
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/允许长数字或者长单词自动折断/">
-            
-                <span>允许长数字或者长单词自动折断</span>
-        </a>
-        <div class="abstract-content">
-            默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的
-解决办法在 table 外组件上添加属性：
-1whiteSpace: 'normal', wordBreak: 'break-all', wordWrap: 'break-word'
+记一下艰难的通过ssh连接SQLserver的解决办法
 
+任务前提有一个无人维护的SQLServer运行与堡垒机中，版本为SQLServer 2008 R2（最开始堡垒机登录后看到的是SQLServer2000，吓一大跳），且只有一台服务器的IP处于堡垒机访问白名单中，需要跑通数据库
+任务过程先确认SQLServer是否正常运行使用 Telnet + 远程桌面 ，确认SQLServer正常运行中
+连接上SQLServer看看情况使用Navicat的General配置+SSH配置，通过SSH到白名单服务器，再连接SQLServer的方式
+Navicat 一下子就连接成功（不愧是专门做数据...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/04</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="ssh">ssh</a>
     
 </div>
             
