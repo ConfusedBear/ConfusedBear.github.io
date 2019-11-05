@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>React小项目走过的坑 · 熊小维&#39;s Studio</title>
+    <title>CentOS7安装Docker · 熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">熊小维&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">React小项目走过的坑</a>
+                <a href="#" class="post-name">CentOS7安装Docker</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            React小项目走过的坑
+            CentOS7安装Docker
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="React">React</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">540</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">788</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/04/17</span>
+                    <span class="post-intro-time">2019/11/05</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,23 +401,27 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。</p>
-<h4 id="Cookie获取"><a href="#Cookie获取" class="headerlink" title="Cookie获取"></a>Cookie获取</h4><p>起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。</p>
-<p>但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cookies（这个插件的下载数还有前面的几十分之一，取名还这么像，莫不是碰瓷的），大多数只适应于前端页面自己存自己取，对于后台传进来的Cookie，虽然浏览器可以看得到，但是目前还没有什么好办法可以获得。</p>
-<p>花了一个上午的时候找前端如何拿到后端传来的Cookie，后来改用直接解析URL参数的方式，五分钟就拿到了。选对方法很重要~</p>
-<h4 id="State参数之间无关"><a href="#State参数之间无关" class="headerlink" title="State参数之间无关"></a>State参数之间无关</h4><p>在constructor中的this.state中设置的参数ABC，其实它们之间并无法直接调用，就好像隔着无形的墙壁一样，比如A=10，B=A*2这样的会报错，因为在B看来，A的值是不知道的，这一个问题尝试了很久，一直发现后面的变量认不出前面的变量的值，最后还是各自分配值解决了问题。</p>
-<h4 id="本地代码中实现跨域请求"><a href="#本地代码中实现跨域请求" class="headerlink" title="本地代码中实现跨域请求"></a>本地代码中实现跨域请求</h4><p>由于本地代码运行时在Localhost3000中，如果这是需要通过fetch请求其他网站上的资源，如需要向百度地图发送请求，就会由于跨域被阻拦请求</p>
-<p>这时就可以使用fetch-jsonp来实现跨域：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fetchJsonp <span class="keyword">from</span> <span class="string">'fetch-jsonp'</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"http://api.map.baidu.com/geoconv/v1/?coords="</span> + <span class="keyword">this</span>.state.GPSlng + <span class="string">","</span> + <span class="keyword">this</span>.state.GPSlat + <span class="string">"&amp;from=1&amp;to=5&amp;ak=mUUbFKtgsaM2rWyuLLIDcyrSkhvGYzmn"</span></span><br><span class="line">fetchJsonp(url, &#123;</span><br><span class="line">	method: <span class="string">"GET"</span>,</span><br><span class="line">	mode: <span class="string">'cors'</span>,</span><br><span class="line">	headers: &#123;</span><br><span class="line">		Accept : <span class="string">'application/json'</span></span><br><span class="line">        <span class="comment">// 'Content-Type': 'application/x-www-form-urlencoded',</span></span><br><span class="line">        <span class="comment">// 'Access-Control-Allow-Origin': '*'</span></span><br><span class="line">      &#125;,</span><br><span class="line">		jsonpCallbackFunction: <span class="string">'showLocation'</span></span><br><span class="line">    &#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> response.json()</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="comment">//此处对获得的结果进行处理</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+        <h3 id="1-查看内核版本"><a href="#1-查看内核版本" class="headerlink" title="1 查看内核版本"></a>1 查看内核版本</h3><blockquote>
+<p>docker官方说至少3.8以上，建议3.10以上（ubuntu下要linux内核3.8以上， RHEL/Centos 的内核修补过， centos6.5的版本就可以——这个可以试试）</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# uname -a</span><br><span class="line">Linux VM_0_15_centos 3.10.0-862.el7.x86_64 #1 SMP Fri Apr 20 16:44:24 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+<h3 id="2-更新yum包"><a href="#2-更新yum包" class="headerlink" title="2 更新yum包"></a>2 更新yum包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# yum update</span><br><span class="line">已加载插件：fastestmirror, langpacks</span><br><span class="line">Determining fastest mirrors</span><br><span class="line">epel                                                     | 5.4 kB     00:00     </span><br><span class="line">extras                                                   | 2.9 kB     00:00     </span><br><span class="line">os                                                       | 3.6 kB     00:00     </span><br><span class="line">updates                                                  | 2.9 kB     00:00     </span><br><span class="line">正在解决依赖关系</span><br><span class="line"><span class="meta">--&gt;</span> 正在检查事务</span><br><span class="line"><span class="meta">---&gt;</span> 软件包 GeoIP.x86_64.0.1.5.0-11.el7 将被 升级</span><br><span class="line"><span class="meta">---&gt;</span> 软件包 GeoIP.x86_64.0.1.5.0-14.el7 将被 更新</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<h3 id="3-安装所需yum包"><a href="#3-安装所需yum包" class="headerlink" title="3 安装所需yum包"></a>3 安装所需yum包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">已加载插件：fastestmirror, langpacks</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line">软件包 yum-utils-1.1.31-52.el7.noarch 已安装并且是最新版本</span><br><span class="line">软件包 device-mapper-persistent-data-0.8.5-1.el7.x86_64 已安装并且是最新版本</span><br><span class="line">软件包 7:lvm2-2.02.185-2.el7_7.2.x86_64 已安装并且是最新版本</span><br><span class="line">无须任何处理</span><br></pre></td></tr></table></figure>
+<h3 id="4-设置docker的yum源"><a href="#4-设置docker的yum源" class="headerlink" title="4 设置docker的yum源"></a>4 设置docker的yum源</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line">已加载插件：fastestmirror, langpacks</span><br><span class="line">adding repo from: https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line">grabbing file https://download.docker.com/linux/centos/docker-ce.repo to /etc/yum.repos.d/docker-ce.repo</span><br><span class="line">repo saved to /etc/yum.repos.d/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<h3 id="5-查看docker版本"><a href="#5-查看docker版本" class="headerlink" title="5 查看docker版本"></a>5 查看docker版本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# yum list docker-ce --showduplicates | sort -r</span><br><span class="line">已加载插件：fastestmirror, langpacks</span><br><span class="line">可安装的软件包</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line">docker-ce.x86_64            3:19.03.4-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.3-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.2-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.1-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:19.03.0-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:18.09.9-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:18.09.8-3.el7                     docker-ce-stable</span><br><span class="line">docker-ce.x86_64            3:18.09.7-3.el7                     docker-ce-stable</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<h3 id="6-选择docker版本进行安装"><a href="#6-选择docker版本进行安装" class="headerlink" title="6 选择docker版本进行安装"></a>6 选择docker版本进行安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# yum install docker-ce-18.06.3.ce</span><br><span class="line">已加载插件：fastestmirror, langpacks</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line">正在解决依赖关系</span><br><span class="line"><span class="meta">--&gt;</span> 正在检查事务</span><br><span class="line"><span class="meta">---&gt;</span> 软件包 docker-ce.x86_64.0.18.06.3.ce-3.el7 将被 安装</span><br><span class="line"><span class="meta">--&gt;</span> 正在处理依赖关系 container-selinux &gt;= 2.9，它被软件包 docker-ce-18.06.3.ce-3.el7.x86_64 需要</span><br><span class="line"><span class="meta">--&gt;</span> 正在处理依赖关系 libcgroup，它被软件包 docker-ce-18.06.3.ce-3.el7.x86_64 需要</span><br><span class="line"><span class="meta">--&gt;</span> 正在处理依赖关系 libltdl.so.7()(64bit)，它被软件包 docker-ce-18.06.3.ce-3.el7.x86_64 需要</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<h3 id="7-启动docker"><a href="#7-启动docker" class="headerlink" title="7 启动docker"></a>7 启动docker</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# systemctl start docker</span><br><span class="line">[root@VM_0_15_centos ~]# systemctl enable docker</span><br><span class="line">Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.</span><br></pre></td></tr></table></figure>
+<h3 id="8-验证docker安装并启动成功"><a href="#8-验证docker安装并启动成功" class="headerlink" title="8 验证docker安装并启动成功"></a>8 验证docker安装并启动成功</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:           18.06.3-ce</span><br><span class="line"> API version:       1.38</span><br><span class="line"> Go version:        go1.10.3</span><br><span class="line"> Git commit:        d7080c1</span><br><span class="line"> Built:             Wed Feb 20 02:26:51 2019</span><br><span class="line"> OS/Arch:           linux/amd64</span><br><span class="line"> Experimental:      false</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Engine:</span><br><span class="line">  Version:          18.06.3-ce</span><br><span class="line">  API version:      1.38 (minimum version 1.12)</span><br><span class="line">  Go version:       go1.10.3</span><br><span class="line">  Git commit:       d7080c1</span><br><span class="line">  Built:            Wed Feb 20 02:28:17 2019</span><br><span class="line">  OS/Arch:          linux/amd64</span><br><span class="line">  Experimental:     false</span><br></pre></td></tr></table></figure>
+<h3 id="9-查看docker当前信息"><a href="#9-查看docker当前信息" class="headerlink" title="9 查看docker当前信息"></a>9 查看docker当前信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">[root@VM_0_15_centos ~]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">[root@VM_0_15_centos ~]# docker info</span><br><span class="line">Containers: 0</span><br><span class="line"> Running: 0</span><br><span class="line"> Paused: 0</span><br><span class="line"> Stopped: 0</span><br><span class="line">Images: 0</span><br><span class="line">Server Version: 18.06.3-ce</span><br><span class="line">Storage Driver: overlay2</span><br><span class="line"> Backing Filesystem: extfs</span><br><span class="line"> Supports d_type: true</span><br><span class="line"> Native Overlay Diff: true</span><br><span class="line">Logging Driver: json-file</span><br><span class="line">Cgroup Driver: cgroupfs</span><br><span class="line">Plugins:</span><br><span class="line"> Volume: local</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://yoursite.com">熊小维</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2019/04/17/React小项目走过的坑/">http://yoursite.com/2019/04/17/React小项目走过的坑/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2019/04/17/React小项目走过的坑/">April 17th 2019, 10:12:57 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2019/04/17/React小项目走过的坑/">April 24th 2019, 9:55:46 pm</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/11/05/CentOS7安装Docker/">http://yoursite.com/2019/11/05/CentOS7安装Docker/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/11/05/CentOS7安装Docker/">November 5th 2019, 1:42:20 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/11/05/CentOS7安装Docker/">November 5th 2019, 1:52:11 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -425,13 +429,13 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/04/18/队列顺序与组顺序/" title="队顺序与组顺序">
-                    <div class="nextTitle">队顺序与组顺序</div>
-                </a>
-            
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/11/04/ssh端口转发及连接SQLserver/" title="ssh端口转发及连接SQLserver">
+                    <div class="prevTitle">ssh端口转发及连接SQLserver</div>
+                </a>
             
         </li>
     </ul>
@@ -447,8 +451,8 @@ height:50vh;
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
         var disqus_config = function () {
-        this.page.url = "http://yoursite.com/2019/04/17/React小项目走过的坑/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "React小项目走过的坑"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://yoursite.com/2019/11/05/CentOS7安装Docker/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "CentOS7安装Docker"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
         (function () { // DON'T EDIT BELOW THIS LINE
@@ -567,7 +571,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie获取"><span class="toc-number">1.</span> <span class="toc-text">Cookie获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#State参数之间无关"><span class="toc-number">2.</span> <span class="toc-text">State参数之间无关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#本地代码中实现跨域请求"><span class="toc-number">3.</span> <span class="toc-text">本地代码中实现跨域请求</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-查看内核版本"><span class="toc-number">1.</span> <span class="toc-text">1 查看内核版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-更新yum包"><span class="toc-number">2.</span> <span class="toc-text">2 更新yum包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装所需yum包"><span class="toc-number">3.</span> <span class="toc-text">3 安装所需yum包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-设置docker的yum源"><span class="toc-number">4.</span> <span class="toc-text">4 设置docker的yum源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-查看docker版本"><span class="toc-number">5.</span> <span class="toc-text">5 查看docker版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-选择docker版本进行安装"><span class="toc-number">6.</span> <span class="toc-text">6 选择docker版本进行安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-启动docker"><span class="toc-number">7.</span> <span class="toc-text">7 启动docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-验证docker安装并启动成功"><span class="toc-number">8.</span> <span class="toc-text">8 验证docker安装并启动成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-查看docker当前信息"><span class="toc-number">9.</span> <span class="toc-text">9 查看docker当前信息</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
