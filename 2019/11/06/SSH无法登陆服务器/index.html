@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>熊小维&#39;s Studio</title>
+    <title>SSH无法登陆服务器 · 熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">熊小维&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">SSH无法登陆服务器</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">熊小维's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            SSH无法登陆服务器
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="SSH">SSH</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">323</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/11/06</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,105 +399,122 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/hexo的坑/">
-            
-                <span>hexo的坑</span>
-        </a>
-        <div class="abstract-content">
-            1 直接在 source -&gt; _posts 里生成Md文件是无效的，总是要走 hexo new 这一步的
-2 md文件里面使用了
-1scroll = &#123;&#123;y : 600&#125;&#125;
-其中的两个大括号会导致 hexo g 时报错。。。
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>突然无法SSH登录到刚买的腾讯云服务器，只显示</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MacBook-Pro:~ xiongxiaowei$ ssh bear</span><br><span class="line">ssh: connect to host [IP] port 22: Connection refused</span><br></pre></td></tr></table></figure>
+<p>登陆腾讯云，进行网络诊断</p>
+<table>
+<thead>
+<tr>
+<th>检测项</th>
+<th>结果</th>
+<th>影响</th>
+<th>处理建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>远程登录端口开放情况</td>
+<td>异常</td>
+<td>远程登录接口未开放</td>
+<td>远程登录接口未开放，请参照文档进行排查</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-查看安全组"><a href="#1-查看安全组" class="headerlink" title="1 查看安全组"></a>1 查看安全组</h3><p>先去查看安全组，是否开放了SSH的22端口，选择了一键放通</p>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>协议端口</th>
+<th>策略</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0.0.0/0</td>
+<td>22</td>
+<td>允许</td>
+<td>一键放通入站规则</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-网页密码登录"><a href="#2-网页密码登录" class="headerlink" title="2 网页密码登录"></a>2 网页密码登录</h3><p>依旧显示无法登录，也无法输入命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* SSH connection failed: connect ECONNREFUSED [IP]:22 *</span><br><span class="line">* Connection closed *</span><br><span class="line">* Socket connection established *</span><br></pre></td></tr></table></figure>
+<h3 id="3-VNC登录"><a href="#3-VNC登录" class="headerlink" title="3 VNC登录"></a>3 VNC登录</h3><p>只好使用最后登录方式的 <code>VNC</code> 登录</p>
+<p>进去之后，先查看 <code>sshd</code> 是否正常运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# ps -ef | grep sshd</span><br><span class="line">root      1863     1  0 10:12 ?        00:00:00 /usr/sbin/sshd -D</span><br></pre></td></tr></table></figure>
+<p>运行正常，再查看 <code>sshd</code> 配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# cat /etc/ssh/sshd_config</span><br><span class="line">Port 78</span><br><span class="line">PasswordAuthentication no</span><br></pre></td></tr></table></figure>
+<p>发现端口号不知何时被改成了78，难怪无法访问</p>
+<p>修改回来</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# vim /etc/ssh/sshd_config</span><br><span class="line">Port 22</span><br><span class="line">PasswordAuthentication no</span><br></pre></td></tr></table></figure>
+<p>改好后重启服务使其生效</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]# service sshd reload</span><br><span class="line">Redirecting to /bin/systemctl reload sshd.service</span><br></pre></td></tr></table></figure>
+<p>再用 <code>terminal</code> 登录就一切正常了~</p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/表头和内容不对齐/">
-            
-                <span>表头和内容不对齐</span>
-        </a>
-        <div class="abstract-content">
-            在使用antd的table组件时，由于需求需要用到表头固定的table组件，示例用法是设置其中某一列的width就可以自动固定住表头，同时由于内容行数很多，还需要可以上下滚动，所以还要设置 scroll= y : 600，实际用的时候由于列比较多，一旦使用 scroll 属性，就会发现表头和内容的列宽度根本没有对齐，而且由于table列宽默认是自动计算的，改变浏览器大小的话，列宽也都会自动改变，而且还是不对齐
-解决办法123456789101112 table &#123;     table-layout:fixed; &#125; .resultColumns &#123;     ...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">熊小维</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/11/06/SSH无法登陆服务器/">http://yoursite.com/2019/11/06/SSH无法登陆服务器/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/11/06/SSH无法登陆服务器/">November 6th 2019, 10:39:42 am</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/11/06/SSH无法登陆服务器/">November 6th 2019, 10:54:53 am</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/允许长数字或者长单词自动折断/">
-            
-                <span>允许长数字或者长单词自动折断</span>
-        </a>
-        <div class="abstract-content">
-            默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的
-解决办法在 table 外组件上添加属性：
-1whiteSpace: 'normal', wordBreak: 'break-all', wordWrap: 'break-word'
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/11/05/Docker部署SpringBoot/" title="Docker部署SpringBoot">
+                    <div class="prevTitle">Docker部署SpringBoot</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "http://yoursite.com/2019/11/06/SSH无法登陆服务器/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "SSH无法登陆服务器"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://confusedbear-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -518,6 +596,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-查看安全组"><span class="toc-number">1.</span> <span class="toc-text">1 查看安全组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-网页密码登录"><span class="toc-number">2.</span> <span class="toc-text">2 网页密码登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-VNC登录"><span class="toc-number">3.</span> <span class="toc-text">3 VNC登录</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1143,6 +1239,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
