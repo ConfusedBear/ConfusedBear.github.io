@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>队顺序与组顺序 · 熊小维&#39;s Studio</title>
+    <title>熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,23 +203,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">熊小维&#39;s Studio.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">队顺序与组顺序</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">熊小维's Studio.</a>
 </header>
@@ -231,74 +220,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            队顺序与组顺序
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="逻辑">逻辑</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">425</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/04/18</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -399,100 +338,44 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <p>今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，因为题目都是一个个的按照队的顺序来存储，但是用的时候需要按组来拿出题目展示，现在完成了任务，来梳理一下：</p>
-<h4 id="队顺序"><a href="#队顺序" class="headerlink" title="队顺序"></a>队顺序</h4><p>即从0开始逐个递增的队列顺序</p>
-<h4 id="组顺序"><a href="#组顺序" class="headerlink" title="组顺序"></a>组顺序</h4><p>队列中若干个为一组，组号也从0开始逐个递增</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>队序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</p>
-<p>组序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7   8</p>
-<p>参数        0 0 0 3 = = = 0 0 0  5   =   =    =   =   =   0</p>
-<blockquote>
-<p>参数代表该组第一个后还剩下几个</p>
-</blockquote>
-<a id="more"></a>
-<h4 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h4><p>希望出题的顺序是按组出题，每组题目在一个页面</p>
-<h4 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h4><p>首先来模拟真实的<strong>递增</strong>情况：</p>
-<p>队号：0    -&gt;    队号：1    -&gt;    队号：2    -&gt;    队号：3    -&gt;    <strong>队号：7</strong></p>
-<p>组号：0    -&gt;    组号：1    -&gt;    组号：2    -&gt;    组号：3    -&gt;    <strong>组号：4</strong></p>
-<p>参数：0    -&gt;    参数：0    -&gt;    参数：0    -&gt;    参数：3    -&gt;    <strong>参数：0</strong></p>
-<blockquote>
-<p>顺序：组号 + 1    -&gt;    队号 + 1    -&gt;    <strong>队号 + 上一个组号的参数</strong>    -&gt;    渲染该组题目</p>
-</blockquote>
-<p>然后来模拟真实的<strong>递减</strong>情况：</p>
-<p><strong>队号：7</strong>    -&gt;    队号：3    -&gt;    队号：2    -&gt;    队号：1    -&gt;    队号：0</p>
-<p><strong>组号：4</strong>    -&gt;    组号：3    -&gt;    组号：2    -&gt;    组号：1    -&gt;    组号：0</p>
-<p><strong>参数：0</strong>    -&gt;    参数：0    -&gt;    参数：0    -&gt;    参数：3    -&gt;    参数：0</p>
-<blockquote>
-<p>顺序：组号 - 1    -&gt;    队号 - 1    -&gt;    <strong>队号 - 当前组号的参数</strong>    -&gt;    渲染该组题目</p>
-</blockquote>
-<p>成了！这样就可以始终保持渲染时顺序正确</p>
-
-    </article>
-    <!-- license  -->
+            <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>原文作者：<a href="http://confusedbear.github.io">熊小维</a>
-            </p><p>原文链接：<a href="http://confusedbear.github.io/2019/04/18/队列顺序与组顺序/">http://confusedbear.github.io/2019/04/18/队列顺序与组顺序/</a>
-            </p><p>发表日期：<a href="http://confusedbear.github.io/2019/04/18/队列顺序与组顺序/">April 18th 2019, 11:20:19 pm</a>
-            </p><p>更新日期：<a href="http://confusedbear.github.io/2019/04/18/队列顺序与组顺序/">April 18th 2019, 11:50:06 pm</a>
-            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/11/25/jdk8原生多线程ParallelStream/">
+            
+                <span>jdk8原生多线程ParallelStream</span>
+        </a>
+        <div class="abstract-content">
+            可使用ParallelStream来进行自动多线程遍历对象
+12345List&lt;String&gt; list = new ArrayList&lt;&gt;();//lambda表达式list.parallelStream().forEach((s) -&gt; &#123;	System.out.println(s);&#125;);
+不过，ArrayList创造的列表遍历时，由于是线程不安全的，多线程会出现遍历同一数据的情况
+因此，可以考虑使用
+1Collections.synchronizedList(new ArrayList&lt;&gt;)
+来包装成线程安全的遍历对象...
         </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ParallelStream">ParallelStream</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/04/20/Python爬虫安装报错解决办法/" title="Python爬虫安装报错解决办法">
-                    <div class="nextTitle">Python爬虫安装报错解决办法</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/04/17/React小项目走过的坑/" title="React小项目走过的坑">
-                    <div class="prevTitle">React小项目走过的坑</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        
-        var disqus_config = function () {
-        this.page.url = "http://confusedbear.github.io/2019/04/18/队列顺序与组顺序/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "队顺序与组顺序"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://confusedbear-github-io.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -574,24 +457,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#队顺序"><span class="toc-number">1.</span> <span class="toc-text">队顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组顺序"><span class="toc-number">2.</span> <span class="toc-text">组顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-number">3.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目的"><span class="toc-number">4.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解析"><span class="toc-number">5.</span> <span class="toc-text">解析</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1465,8 +1330,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
