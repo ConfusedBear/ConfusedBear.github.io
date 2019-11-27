@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">666</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">669</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -403,7 +403,7 @@ height:50vh;
     <article class="article-entry">
         <p>目前有一个需求是生成像是钉钉聊天页面中的水印，这个可以前端生成也可以后端生成，最终采用了后端生成，虽然我觉得前端生成的效果更好，因为有很方便的插件，文字抗锯齿效果也更好</p>
 <p>使用了BufferedImage，Graphics2D</p>
-<h3 id="1-先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关"><a href="#1-先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关" class="headerlink" title="1 先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关"></a>1 先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String text = <span class="string">"这里是水印 托马斯1234"</span>;</span><br><span class="line"><span class="comment">// 设置字体大小为14px，则一个中文的宽度是14px，一个数字和空格的宽度是8px</span></span><br><span class="line"><span class="keyword">int</span> fontSize = <span class="number">14</span>;</span><br><span class="line"><span class="comment">// 计算字体的长度</span></span><br><span class="line"><span class="keyword">int</span> StringLengthofNum = text.length();</span><br><span class="line"><span class="keyword">int</span> StringLengthofPixel = fontSize * (StringLengthofNum - <span class="number">10</span> + <span class="number">5</span>) + fontSize / <span class="number">2</span> * <span class="number">5</span> + fontSize + fontSize / <span class="number">3</span>;</span><br><span class="line"><span class="comment">// 计算倾斜30度的斜边的对边，即图片高度的像素长度 = 斜边 * sin(30)</span></span><br><span class="line"><span class="keyword">int</span> height = StringLengthofPixel / <span class="number">2</span> + fontSize / <span class="number">3</span>;</span><br><span class="line"><span class="comment">// 计算倾斜30度的斜边的邻边，即图片宽度的像素长度 = 斜边 * cos(30)</span></span><br><span class="line"><span class="keyword">int</span> width = (<span class="keyword">int</span>) (StringLengthofPixel * Math.cos(Math.toRadians(<span class="number">30</span>)));</span><br></pre></td></tr></table></figure>
+<h3 id="1-先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关"><a href="#1-先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关" class="headerlink" title="1 先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关"></a>1 先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">String text = <span class="string">"这里是水印 托马斯1234"</span>;</span><br><span class="line"><span class="comment">// 设置字体大小为14px，则一个中文的宽度是14px，一个数字和空格的宽度是8px</span></span><br><span class="line"><span class="keyword">int</span> fontSize = <span class="number">14</span>;</span><br><span class="line"><span class="comment">// 计算字体的长度</span></span><br><span class="line"><span class="keyword">int</span> StringLengthofNum = text.length();</span><br><span class="line"><span class="comment">// 长方形字高</span></span><br><span class="line"><span class="keyword">int</span> h = (<span class="keyword">int</span>) (<span class="number">1.5</span> * fontSize);</span><br><span class="line"><span class="comment">// 长方形字长 (多留一点长度)</span></span><br><span class="line"><span class="keyword">int</span> l = fontSize * StringLengthofNum;</span><br><span class="line"><span class="comment">// 图片宽 = 二分之一字高 + 二分之根号三字长</span></span><br><span class="line"><span class="keyword">int</span> width = (<span class="keyword">int</span>) ((h / <span class="number">2</span>) + l * Math.cos(Math.toRadians(<span class="number">30</span>)));</span><br><span class="line"><span class="comment">// 图片高 = 二分之一字长 + 二分之根号三字高</span></span><br><span class="line"><span class="keyword">int</span> height = (<span class="keyword">int</span>) ((l / <span class="number">2</span>) + h * Math.cos(Math.toRadians(<span class="number">30</span>)));</span><br></pre></td></tr></table></figure>
 <h3 id="2-开始生成一个透明的PNG图片作为背景"><a href="#2-开始生成一个透明的PNG图片作为背景" class="headerlink" title="2 开始生成一个透明的PNG图片作为背景"></a>2 开始生成一个透明的PNG图片作为背景</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BufferedImage image = <span class="keyword">new</span> BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);</span><br><span class="line">Graphics2D g = image.createGraphics();</span><br><span class="line"><span class="comment">//设置背景为透明，如果不设置则背景默认为黑色</span></span><br><span class="line">image = g.getDeviceConfiguration().createCompatibleImage(width, height, Transparency.TRANSLUCENT);</span><br><span class="line">g.dispose();</span><br><span class="line">g = image.createGraphics();</span><br></pre></td></tr></table></figure>
 <h3 id="3-开始把水印写上去"><a href="#3-开始把水印写上去" class="headerlink" title="3 开始把水印写上去"></a>3 开始把水印写上去</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启抗锯齿</span></span><br><span class="line">g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</span><br><span class="line">g.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_DEFAULT);</span><br><span class="line">g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);</span><br><span class="line"><span class="comment">// 设置字体透明度</span></span><br><span class="line">g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, <span class="number">0.5f</span>));</span><br><span class="line"><span class="comment">// 设置字体颜色</span></span><br><span class="line">g.setColor(Color.BLACK);</span><br><span class="line"><span class="comment">// 设置字体种类和字重类型</span></span><br><span class="line">Font font = <span class="keyword">new</span> Font(<span class="string">"微软雅黑"</span>, Font.PLAIN, fontSize);</span><br><span class="line">g.setFont(font);</span><br><span class="line"><span class="comment">// 将画布逆时针旋转30度</span></span><br><span class="line">g.rotate(Math.toRadians(-<span class="number">30</span>), <span class="number">0</span>, height);</span><br><span class="line"><span class="comment">// 画布写字</span></span><br><span class="line">g.drawString(text, fontSize / <span class="number">3</span>, height);</span><br><span class="line">g.dispose();</span><br></pre></td></tr></table></figure>
 <h3 id="4-生成的水印图片放在本地保存"><a href="#4-生成的水印图片放在本地保存" class="headerlink" title="4 生成的水印图片放在本地保存"></a>4 生成的水印图片放在本地保存</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	String outImgPath = <span class="string">"test.png"</span>;</span><br><span class="line">	FileOutputStream outImgStream = <span class="keyword">new</span> FileOutputStream(outImgPath);</span><br><span class="line">	ImageIO.write(image, <span class="string">"png"</span>, outImgStream);</span><br><span class="line">	outImgStream.flush();</span><br><span class="line">	outImgStream.close();</span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -416,7 +416,7 @@ height:50vh;
             <p>原文作者：<a href="http://confusedbear.github.io">熊小维</a>
             </p><p>原文链接：<a href="http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/">http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/</a>
             </p><p>发表日期：<a href="http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/">November 18th 2019, 1:33:12 pm</a>
-            </p><p>更新日期：<a href="http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/">November 19th 2019, 8:07:36 pm</a>
+            </p><p>更新日期：<a href="http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/">November 26th 2019, 6:12:57 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -1113,9 +1113,22 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 37
+        Total : 38
         </div>
         <!-- search  -->
         
@@ -1131,12 +1144,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/jdk8原生多线程ParallelStream/">jdk8原生多线程ParallelStream</a>
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href="/2019/11/27/mybatis生成代码/">mybatis生成代码</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池Executors/">线程池Executors</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/jdk8原生多线程ParallelStream/">jdk8原生多线程ParallelStream</a>
         </li>
     
     
@@ -1151,12 +1169,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/MySQL执行顺序/">MySQL执行顺序</a>
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池ThreadPoolExecutor/">线程池ThreadPoolExecutor</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池ThreadPoolExecutor/">线程池ThreadPoolExecutor</a>
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/MySQL执行顺序/">MySQL执行顺序</a>
         </li>
     
     
@@ -1281,7 +1299,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/允许长数字或者长单词自动折断/">允许长数字或者长单词自动折断</a>
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/表头和内容不对齐/">表头和内容不对齐</a>
         </li>
     
     
@@ -1291,7 +1309,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/表头和内容不对齐/">表头和内容不对齐</a>
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/允许长数字或者长单词自动折断/">允许长数字或者长单词自动折断</a>
         </li>
     
     
@@ -1323,21 +1341,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
-        <span class="sidebar-tag-name" data-tags="端口"><span class="iconfont-archer">&#xe606;</span>端口</span>
-    
         <span class="sidebar-tag-name" data-tags="Port"><span class="iconfont-archer">&#xe606;</span>Port</span>
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
-        <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
-    
-        <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
+        <span class="sidebar-tag-name" data-tags="端口"><span class="iconfont-archer">&#xe606;</span>端口</span>
     
         <span class="sidebar-tag-name" data-tags="PDF"><span class="iconfont-archer">&#xe606;</span>PDF</span>
     
-        <span class="sidebar-tag-name" data-tags="SSH"><span class="iconfont-archer">&#xe606;</span>SSH</span>
+        <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
     
         <span class="sidebar-tag-name" data-tags="Python爬虫"><span class="iconfont-archer">&#xe606;</span>Python爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
     
         <span class="sidebar-tag-name" data-tags="服务器"><span class="iconfont-archer">&#xe606;</span>服务器</span>
     
@@ -1345,35 +1361,37 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
+        <span class="sidebar-tag-name" data-tags="SSH"><span class="iconfont-archer">&#xe606;</span>SSH</span>
+    
+        <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
+    
         <span class="sidebar-tag-name" data-tags="ParallelStream"><span class="iconfont-archer">&#xe606;</span>ParallelStream</span>
     
         <span class="sidebar-tag-name" data-tags="play"><span class="iconfont-archer">&#xe606;</span>play</span>
     
-        <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
+        <span class="sidebar-tag-name" data-tags="postgis"><span class="iconfont-archer">&#xe606;</span>postgis</span>
     
         <span class="sidebar-tag-name" data-tags="ss"><span class="iconfont-archer">&#xe606;</span>ss</span>
     
-        <span class="sidebar-tag-name" data-tags="postgis"><span class="iconfont-archer">&#xe606;</span>postgis</span>
-    
-        <span class="sidebar-tag-name" data-tags="地理围栏"><span class="iconfont-archer">&#xe606;</span>地理围栏</span>
+        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
         <span class="sidebar-tag-name" data-tags="table"><span class="iconfont-archer">&#xe606;</span>table</span>
     
-        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
-    
         <span class="sidebar-tag-name" data-tags="开发规范"><span class="iconfont-archer">&#xe606;</span>开发规范</span>
+    
+        <span class="sidebar-tag-name" data-tags="地理围栏"><span class="iconfont-archer">&#xe606;</span>地理围栏</span>
+    
+        <span class="sidebar-tag-name" data-tags="webstorm"><span class="iconfont-archer">&#xe606;</span>webstorm</span>
+    
+        <span class="sidebar-tag-name" data-tags="水印"><span class="iconfont-archer">&#xe606;</span>水印</span>
+    
+        <span class="sidebar-tag-name" data-tags="postgre"><span class="iconfont-archer">&#xe606;</span>postgre</span>
     
         <span class="sidebar-tag-name" data-tags="Executors"><span class="iconfont-archer">&#xe606;</span>Executors</span>
     
         <span class="sidebar-tag-name" data-tags="Thread"><span class="iconfont-archer">&#xe606;</span>Thread</span>
-    
-        <span class="sidebar-tag-name" data-tags="postgre"><span class="iconfont-archer">&#xe606;</span>postgre</span>
-    
-        <span class="sidebar-tag-name" data-tags="水印"><span class="iconfont-archer">&#xe606;</span>水印</span>
-    
-        <span class="sidebar-tag-name" data-tags="webstorm"><span class="iconfont-archer">&#xe606;</span>webstorm</span>
     
         <span class="sidebar-tag-name" data-tags="逻辑"><span class="iconfont-archer">&#xe606;</span>逻辑</span>
     
