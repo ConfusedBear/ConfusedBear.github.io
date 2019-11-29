@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>熊小维&#39;s Studio</title>
+    <title>mapper.xml设置自定义SQL · 熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">熊小维&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">mapper.xml设置自定义SQL</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">熊小维's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            mapper.xml设置自定义SQL
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mapper">mapper</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">226</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/11/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,359 +399,80 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/09/27/IOS下的newDate兼容性问题/">
-            
-                <span>IOS下的newDate兼容性问题</span>
-        </a>
-        <div class="abstract-content">
-            进行小程序的webView内容开发，用到了一个ANTD的CountDown插件，里面需要获取到当前时间，没想到在Chrome浏览器和自己的安卓手机都可以正常的功能，到了IOS就直接显示NAN
-排查之后，发现是React中语法 new Date() 的兼容性问题，在Mac的Safari浏览器也同样会出现
-查过之后发现了解决办法：
-12345var currentDate = new Date('2019-09-01 00:00:00'.replace(/\s/, 'T')).getTime(); // 或者 var currentDate = new Date('2019-09-01 00...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="兼容问题">兼容问题</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/09/24/playframework两种使用数据库的方法/">
-            
-                <span>playframework两种使用数据库的方法</span>
-        </a>
-        <div class="abstract-content">
-            1 conn: Connection获得请求后的对象
-12345678910val select = conn.prepareStatement(      s"""         |SELECT id,name         |FROM tr_user_info""".stripMargin)val selectResult = select.executeQuery()val selectResult = select.execute()val selectResult = select.executeUpdate()// executeQuery只能用于查询// execute...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="play">play</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/09/20/Mac和Linux快速测试端口状态/">
-            
-                <span>Mac和Linux快速测试端口状态</span>
-        </a>
-        <div class="abstract-content">
-            测试端口存活的最常用的方法是telnet
-1$telnet 127.0.0.1 80
-不过这个方法有一个不方便的地方：连接成功后会进入交互模式，需要按 ctrl + ] 和 q 才能退出。
-后来，经过网上一番搜索，发现一个简便的方法，请出大神 nc
-123$nc -zv 127.0.0.1 80Connection to 127.0.0.1 port 80 [tcp/arepa-cas] succeeded!    # 成功nc: connectx to 127.0.0.1 port 80 (tcp) failed: Connection refused    # 失败
-命令运行后，1....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="端口">端口</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/09/18/PostgreSQL语法小技巧/">
-            
-                <span>PostgreSQL语法小技巧</span>
-        </a>
-        <div class="abstract-content">
-            1 展示分组比例和分组总和查询语句
-123SELECT seconditemid, total,      total::float/(SUM(total) OVER()) as ratio FROM c;
-结果展示
-12345seconditemid | total | ratio --------------+-------+------- A1   | 4500 | 0.45 A2   | 5500 | 0.55 (2 rows)
-2 不使用GROUP BY进行分组查询语句
-1ROW_NUMBER() OVER (partition BY scenic ORDER BY date_...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Postgre">Postgre</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/09/12/从高德地图-百度地图拉取地理围栏/">
-            
-                <span>从高德地图/百度地图拉取地理围栏</span>
-        </a>
-        <div class="abstract-content">
-            1 抓包地理围栏数据高德地图进入高德地图：www.amap.com 调出F12，选择Network，清空历史请求
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>当 <code>mapper.xml</code> 文件中需要写自定义SQL时，需要确定好输入类型和输出类型</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"TaskLine"</span>&gt;</span></span><br><span class="line">        id, `name`, `desc`, `type`, start_time</span><br><span class="line"><span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getAllTask"</span> <span class="attr">resultType</span>=<span class="string">"com.taskline.dto.TaskLine"</span> <span class="attr">parameterType</span>=<span class="string">"java.lang.Integer"</span>&gt;</span></span><br><span class="line">        SELECT</span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"TaskLine"</span>/&gt;</span></span><br><span class="line">        from task</span><br><span class="line">        where user_id = #&#123;userId,jdbcType=INTEGER&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里的 <code>resultType</code> 即为输出类型，指定了SQL语句返回对象应该与什么实体相对应，如果是自定义实体，则用<code>resultType</code>， 或者也可以使用 <code>resultMap</code> ，但是 <code>resultMap</code> 需要手动写字段名称与实体名称对应关系，比较繁琐，因此，可以开启 <code>mybatis</code> 的驼峰转换功能，就可以直接使用 <code>resultType</code> 了</p>
+<p>开启 <code>mybatis</code> 的驼峰转换功能，需要在 <code>application.yml</code> 中加上：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mybatis:</span></span><br><span class="line"><span class="attr">  configuration:</span></span><br><span class="line">    <span class="comment">#    开启驼峰命名映射</span></span><br><span class="line"><span class="attr">    map-underscore-to-camel-case:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>而 <code>parameterType</code> 则定义了这段SQL语句入参的属性，可写可不写</p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="地理围栏">地理围栏</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/08/30/React发布到服务器/">
-            
-                <span>React发布到服务器</span>
-        </a>
-        <div class="abstract-content">
-            编译React进入需要打包发布的React项目内进行编译：
-1npm run build
-打包后的目标文件夹即为 build 
-上传到服务器上传的是一整个文件夹：
-1scp -r build root@sbw:/root/build
-服务器安装Nodejs+npm首先安装 EPEL ，这是企业版Linux的额外软件包，为CentOS提供默认不提供的软件包
-1yum install epel-release
-接着就可以安装Nodejs+npm了：
-12sudo yum install nodejssudo yum install npm
-安装完成后检查版本
-12node -vnpm -v
-...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://confusedbear.github.io">熊小维</a>
+            </p><p>原文链接：<a href="http://confusedbear.github.io/2019/11/28/mapper-xml设置自定义SQL/">http://confusedbear.github.io/2019/11/28/mapper-xml设置自定义SQL/</a>
+            </p><p>发表日期：<a href="http://confusedbear.github.io/2019/11/28/mapper-xml设置自定义SQL/">November 28th 2019, 10:13:19 am</a>
+            </p><p>更新日期：<a href="http://confusedbear.github.io/2019/11/28/mapper-xml设置自定义SQL/">November 28th 2019, 10:19:30 am</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="服务器">服务器</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/08/29/ss/">
-            
-                <span>ss</span>
-        </a>
-        <div class="abstract-content">
-            注意事项
-服务器内核必须在4.9以上
-
-预备工作1234apt-get updateapt-get upgradeapt-get install python-pippip install git+https://github.com/shadowsocks/shadowsocks.git@master
-新建配置文件12345678910vi /etc/ss.json&#123;​    "server":"-这里写服务器IP-", ​    "server_port":8388,​    "local_address": "127.0.0.1",​    "local_port":10...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ss">ss</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/08/28/Mac停止端口进程/">
-            
-                <span>Mac停止端口进程</span>
-        </a>
-        <div class="abstract-content">
-            「应用场景」在命令行打开了某个端口的服务，但是忘记关闭端口服务就关闭了命令行
-「解决办法」123npm install -g xl_close_portxl_close_port -p 8082
-「实例效果」
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Port">Port</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/08/23/PDF下载链接/">
-            
-                <span>PDF下载链接</span>
-        </a>
-        <div class="abstract-content">
-            PythonPython 3网络爬虫开发实战
-
-链接:https://pan.baidu.com/s/1IeTgMrtrRHaw5FHHYbsotw  密码:klmm
-
-Python基础教程 第3版
-
-链接:https://pan.baidu.com/s/19WHcP6x7OGxOrvjp_KT2ew  密码:hqhg
-
-数据库PostgreSQL技术内幕 查询优化深度探索
-
-链接:https://pan.baidu.com/s/1599DSsNWFL8X8pru54CElg  密码:wn4g
-
-MySQL必知必会
-
-链接:https://pan.baidu.com/s/1T3yV8xh...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="PDF">PDF</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/26/SpringBoot进阶笔记/">
-            
-                <span>SpringBoot进阶笔记</span>
-        </a>
-        <div class="abstract-content">
-            <h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h1><h4 id="修改-Luckymoney对象"><a href="#修改-Luckymoney对象" class="headerlink" title="修改 Luckymoney对象"></a>修改 Luckymoney对象</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Min</span>(value = <span class="number">1</span>, message = <span class="string">"红包太小禁止发送"</span>)</span><br><span class="line"><span class="keyword">private</span> BigDecimal money;</span><br></pre></td></tr></table></figure>
-<h4 id="修改-LuckymoneyController"><a href="#修改-LuckymoneyController" class="headerlink" title="修改 LuckymoneyController"></a>修改 LuckymoneyController</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建红包</span></span><br><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/luckymoneys"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Luckymoney <span class="title">create</span><span class="params">(@Valid Luckymoney luckymoney, BindingResult bindingResult)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(bindingResult.hasErrors())&#123;</span><br><span class="line">  		System.out.println(bindingResult.getFieldError().getDefaultMessage());</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	luckymoney.setProducer(producer);</span><br><span class="line">	luckymoney.setMoney(money);</span><br><span class="line">	<span class="keyword">return</span> repository.save(luckymoney);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="AOP-统一处理请求日志"><a href="#AOP-统一处理请求日志" class="headerlink" title="AOP 统一处理请求日志"></a>AOP 统一处理请求日志</h1><p>AOP 是一种编程范式，与语言无关，是一种程序设计思想</p>
-<p>面向切面（AOP）Aspect Oriented Programming</p>
-<p>面向对象（OOP）Object Oriented Programming</p>
-<p>面向过程（POP）Procedure Oriented Programming</p>
-<p>AOP 将通用逻辑从业务逻辑中分离出来</p>
-<h4 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="新建-HttpAspect-java"><a href="#新建-HttpAspect-java" class="headerlink" title="新建 HttpAspect.java"></a>新建 HttpAspect.java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpAspect</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 对 List 方法进行拦截</span></span><br><span class="line">  <span class="meta">@Before</span>(<span class="string">"execution(public * com.imooc.controller.LuckymoneysController.list(..))"</span>)</span><br><span class="line">  <span class="comment">// 对所有方法都拦截</span></span><br><span class="line">  <span class="meta">@Before</span>(<span class="string">"execution(public * com.imooc.controller.LuckymoneysController.*(..))"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@After</span>(<span class="string">"execution(public * com.imooc.controller.LuckymoneysController.*(..))"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="SpringBoot">SpringBoot</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/11/29/坐标转换/" title="坐标转换">
+                    <div class="nextTitle">坐标转换</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/11/27/mybatis生成代码/" title="mybatis生成代码">
+                    <div class="prevTitle">mybatis生成代码</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2019/page/2/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2019/page/4/">4</a><a class="extend next" rel="next" href="/archives/2019/page/4/">NEXT &#62;</a>
-    </nav>
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "http://confusedbear.github.io/2019/11/28/mapper-xml设置自定义SQL/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "mapper.xml设置自定义SQL"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://confusedbear-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -772,6 +554,24 @@ MySQL必知必会
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1745,6 +1545,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
