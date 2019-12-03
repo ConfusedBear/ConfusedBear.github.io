@@ -346,6 +346,42 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/12/03/docker日志清理/">
+            
+                <span>docker日志清理</span>
+        </a>
+        <div class="abstract-content">
+            docker的日志默认是没有限制文件大小的，如果日志输出较多且不清理或者限制，再大的硬盘空间也会不够
+日志的位置默认是在 /var/lib/docker/containers 下的
+进入之后，可以通过命令 du -sh * 来查看各个容器所占的硬盘空间大小
+1 清理日志清理日志有两种方式
+一种是直接删除文件，这种情况需要重启docker容器，否则日志文件是依然与容器连接着的，并不会真正的删除
+1rm -rf sdfjlsdflkj2lkfjsdlkfajlsdjflasdjfalsdf-json.log
+第二种则是不影响容器的情况下，直接清空日志
+1truncate -s 0 /var/...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/11/12/血的教训不要开docker2375私有仓库端口/">
             
                 <span>血的教训不要开docker2375私有仓库端口</span>
@@ -1120,9 +1156,55 @@ docker官方说至少3.8以上，建议3.10以上（ubuntu下要linux内核3.8�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 42
+        Total : 44
         </div>
         <!-- search  -->
         
@@ -1135,6 +1217,16 @@ docker官方说至少3.8以上，建议3.10以上（ubuntu下要linux内核3.8�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/03</span><a class="archive-post-title" href="/2019/12/03/docker日志清理/">docker日志清理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href="/2019/12/02/npm更换aliyun/">npm更换aliyun</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1168,12 +1260,12 @@ docker官方说至少3.8以上，建议3.10以上（ubuntu下要linux内核3.8�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池Executors/">线程池Executors</a>
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/jdk8原生多线程ParallelStream/">jdk8原生多线程ParallelStream</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/jdk8原生多线程ParallelStream/">jdk8原生多线程ParallelStream</a>
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池Executors/">线程池Executors</a>
         </li>
     
     
@@ -1313,17 +1405,17 @@ docker官方说至少3.8以上，建议3.10以上（ubuntu下要linux内核3.8�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/hexo的坑/">hexo的坑</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/允许长数字或者长单词自动折断/">允许长数字或者长单词自动折断</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/表头和内容不对齐/">表头和内容不对齐</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/hexo的坑/">hexo的坑</a>
         </li>
     
     
@@ -1351,39 +1443,47 @@ docker官方说至少3.8以上，建议3.10以上（ubuntu下要linux内核3.8�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="兼容问题"><span class="iconfont-archer">&#xe606;</span>兼容问题</span>
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="Port"><span class="iconfont-archer">&#xe606;</span>Port</span>
     
-        <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
+        <span class="sidebar-tag-name" data-tags="兼容问题"><span class="iconfont-archer">&#xe606;</span>兼容问题</span>
     
         <span class="sidebar-tag-name" data-tags="端口"><span class="iconfont-archer">&#xe606;</span>端口</span>
     
-        <span class="sidebar-tag-name" data-tags="Python爬虫"><span class="iconfont-archer">&#xe606;</span>Python爬虫</span>
-    
         <span class="sidebar-tag-name" data-tags="PDF"><span class="iconfont-archer">&#xe606;</span>PDF</span>
     
-        <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
-    
-        <span class="sidebar-tag-name" data-tags="SSH"><span class="iconfont-archer">&#xe606;</span>SSH</span>
-    
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+        <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
-        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
-    
-        <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
+        <span class="sidebar-tag-name" data-tags="Python爬虫"><span class="iconfont-archer">&#xe606;</span>Python爬虫</span>
     
         <span class="sidebar-tag-name" data-tags="服务器"><span class="iconfont-archer">&#xe606;</span>服务器</span>
     
-        <span class="sidebar-tag-name" data-tags="play"><span class="iconfont-archer">&#xe606;</span>play</span>
+        <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
+    
+        <span class="sidebar-tag-name" data-tags="SpringBoot"><span class="iconfont-archer">&#xe606;</span>SpringBoot</span>
+    
+        <span class="sidebar-tag-name" data-tags="SSH"><span class="iconfont-archer">&#xe606;</span>SSH</span>
     
         <span class="sidebar-tag-name" data-tags="ParallelStream"><span class="iconfont-archer">&#xe606;</span>ParallelStream</span>
     
-        <span class="sidebar-tag-name" data-tags="table"><span class="iconfont-archer">&#xe606;</span>table</span>
-    
         <span class="sidebar-tag-name" data-tags="bean"><span class="iconfont-archer">&#xe606;</span>bean</span>
+    
+        <span class="sidebar-tag-name" data-tags="mapper"><span class="iconfont-archer">&#xe606;</span>mapper</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="npm"><span class="iconfont-archer">&#xe606;</span>npm</span>
+    
+        <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
+    
+        <span class="sidebar-tag-name" data-tags="postgis"><span class="iconfont-archer">&#xe606;</span>postgis</span>
+    
+        <span class="sidebar-tag-name" data-tags="play"><span class="iconfont-archer">&#xe606;</span>play</span>
+    
+        <span class="sidebar-tag-name" data-tags="地理围栏"><span class="iconfont-archer">&#xe606;</span>地理围栏</span>
     
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
@@ -1391,35 +1491,29 @@ docker官方说至少3.8以上，建议3.10以上（ubuntu下要linux内核3.8�
     
         <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
-        <span class="sidebar-tag-name" data-tags="地理围栏"><span class="iconfont-archer">&#xe606;</span>地理围栏</span>
+        <span class="sidebar-tag-name" data-tags="Schedule"><span class="iconfont-archer">&#xe606;</span>Schedule</span>
     
-        <span class="sidebar-tag-name" data-tags="postgre"><span class="iconfont-archer">&#xe606;</span>postgre</span>
-    
-        <span class="sidebar-tag-name" data-tags="mapper"><span class="iconfont-archer">&#xe606;</span>mapper</span>
-    
-        <span class="sidebar-tag-name" data-tags="webstorm"><span class="iconfont-archer">&#xe606;</span>webstorm</span>
-    
-        <span class="sidebar-tag-name" data-tags="wgs"><span class="iconfont-archer">&#xe606;</span>wgs</span>
-    
-        <span class="sidebar-tag-name" data-tags="postgis"><span class="iconfont-archer">&#xe606;</span>postgis</span>
+        <span class="sidebar-tag-name" data-tags="table"><span class="iconfont-archer">&#xe606;</span>table</span>
     
         <span class="sidebar-tag-name" data-tags="开发规范"><span class="iconfont-archer">&#xe606;</span>开发规范</span>
     
-        <span class="sidebar-tag-name" data-tags="Executors"><span class="iconfont-archer">&#xe606;</span>Executors</span>
+        <span class="sidebar-tag-name" data-tags="wgs"><span class="iconfont-archer">&#xe606;</span>wgs</span>
     
-        <span class="sidebar-tag-name" data-tags="逻辑"><span class="iconfont-archer">&#xe606;</span>逻辑</span>
+        <span class="sidebar-tag-name" data-tags="webstorm"><span class="iconfont-archer">&#xe606;</span>webstorm</span>
+    
+        <span class="sidebar-tag-name" data-tags="postgre"><span class="iconfont-archer">&#xe606;</span>postgre</span>
     
         <span class="sidebar-tag-name" data-tags="水印"><span class="iconfont-archer">&#xe606;</span>水印</span>
+    
+        <span class="sidebar-tag-name" data-tags="Executors"><span class="iconfont-archer">&#xe606;</span>Executors</span>
     
         <span class="sidebar-tag-name" data-tags="Thread"><span class="iconfont-archer">&#xe606;</span>Thread</span>
     
         <span class="sidebar-tag-name" data-tags="filter, logger"><span class="iconfont-archer">&#xe606;</span>filter, logger</span>
     
-        <span class="sidebar-tag-name" data-tags="SpringBoot"><span class="iconfont-archer">&#xe606;</span>SpringBoot</span>
+        <span class="sidebar-tag-name" data-tags="逻辑"><span class="iconfont-archer">&#xe606;</span>逻辑</span>
     
         <span class="sidebar-tag-name" data-tags="redis"><span class="iconfont-archer">&#xe606;</span>redis</span>
-    
-        <span class="sidebar-tag-name" data-tags="Schedule"><span class="iconfont-archer">&#xe606;</span>Schedule</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
