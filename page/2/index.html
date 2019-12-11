@@ -359,6 +359,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/11/27/mybatis生成代码/">
+            
+                <span>mybatis生成代码</span>
+        </a>
+        <div class="abstract-content">
+            
+mybatis 在 SpringBoot 中的一个重要作用，就是根据数据库中的表，来生成对应的DTO，Mapper，Mapper.xml等文件，这样可以快速把后端与数据库连接在一起
+
+1 配置maven源首先要做的是确保 maven 的 setting.xml 文件内有阿里云的 maven 源地址，因为需要下载一系列的 maven 依赖
+123456789101112131415&lt;mirrors&gt;  	&lt;!--地址可以在https://maven.aliyun.com/mvn/view查看到--&gt;  	&lt;mirror&gt;      &lt;id&gt;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mybatis">mybatis</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/11/25/jdk8原生多线程ParallelStream/">
             
                 <span>jdk8原生多线程ParallelStream</span>
@@ -654,42 +687,6 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="水印">水印</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/11/12/过滤器与日志/">
-            
-                <span>过滤器与日志</span>
-        </a>
-        <div class="abstract-content">
-            希望实现Web请求都打印出来，就需要使用过滤器+日志的组合了
-
-过滤器使用 springboot 自带，日志使用 lombok 的 slf4j
-
-过滤器Filter这里可以在 doFilter 方法中的 filterChain.doFilter 之前进行获得HTTP请求后的处理工作
-需要先将 servletRequest 转换为 httpServletRequest 再进行请求体读取，可以获得如请求URL，请求主机IP等内容
-日志log导入 lombok 的 Slf4j 后，直接使用 log 即可，如 log.debug() , log.info() , log.error() 等
-同时...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="filter, logger">filter, logger</a>
     
 </div>
             
@@ -1579,9 +1576,58 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 47
+        Total : 48
         </div>
         <!-- search  -->
         
@@ -1594,6 +1640,11 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span><a class="archive-post-title" href="/2019/12/11/使POST请求不进行证书验证/">使POST请求不进行证书验证</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1652,12 +1703,17 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/SpringBoot多线程注入bean/">SpringBoot多线程注入bean</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池Executors/">线程池Executors</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/SpringBoot多线程注入bean/">SpringBoot多线程注入bean</a>
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池ThreadPoolExecutor/">线程池ThreadPoolExecutor</a>
         </li>
     
     
@@ -1668,11 +1724,6 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/MySQL执行顺序/">MySQL执行顺序</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池ThreadPoolExecutor/">线程池ThreadPoolExecutor</a>
         </li>
     
     
@@ -1797,17 +1848,17 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/表头和内容不对齐/">表头和内容不对齐</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/允许长数字或者长单词自动折断/">允许长数字或者长单词自动折断</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/hexo的坑/">hexo的坑</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/2019/05/11/表头和内容不对齐/">表头和内容不对齐</a>
         </li>
     
     
@@ -1835,19 +1886,21 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
         <span class="sidebar-tag-name" data-tags="Connection"><span class="iconfont-archer">&#xe606;</span>Connection</span>
     
-        <span class="sidebar-tag-name" data-tags="Port"><span class="iconfont-archer">&#xe606;</span>Port</span>
-    
         <span class="sidebar-tag-name" data-tags="兼容问题"><span class="iconfont-archer">&#xe606;</span>兼容问题</span>
+    
+        <span class="sidebar-tag-name" data-tags="Port"><span class="iconfont-archer">&#xe606;</span>Port</span>
     
         <span class="sidebar-tag-name" data-tags="端口"><span class="iconfont-archer">&#xe606;</span>端口</span>
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
-        <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
-    
         <span class="sidebar-tag-name" data-tags="PDF"><span class="iconfont-archer">&#xe606;</span>PDF</span>
+    
+        <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
     
         <span class="sidebar-tag-name" data-tags="Python爬虫"><span class="iconfont-archer">&#xe606;</span>Python爬虫</span>
     
@@ -1859,11 +1912,9 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
         <span class="sidebar-tag-name" data-tags="SSH"><span class="iconfont-archer">&#xe606;</span>SSH</span>
     
-        <span class="sidebar-tag-name" data-tags="bean"><span class="iconfont-archer">&#xe606;</span>bean</span>
-    
         <span class="sidebar-tag-name" data-tags="mail"><span class="iconfont-archer">&#xe606;</span>mail</span>
     
-        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+        <span class="sidebar-tag-name" data-tags="bean"><span class="iconfont-archer">&#xe606;</span>bean</span>
     
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
@@ -1879,11 +1930,13 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
         <span class="sidebar-tag-name" data-tags="postgis"><span class="iconfont-archer">&#xe606;</span>postgis</span>
     
-        <span class="sidebar-tag-name" data-tags="ss"><span class="iconfont-archer">&#xe606;</span>ss</span>
-    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
+        <span class="sidebar-tag-name" data-tags="POST"><span class="iconfont-archer">&#xe606;</span>POST</span>
+    
         <span class="sidebar-tag-name" data-tags="地理围栏"><span class="iconfont-archer">&#xe606;</span>地理围栏</span>
+    
+        <span class="sidebar-tag-name" data-tags="ss"><span class="iconfont-archer">&#xe606;</span>ss</span>
     
         <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
@@ -1893,17 +1946,17 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
         <span class="sidebar-tag-name" data-tags="wgs"><span class="iconfont-archer">&#xe606;</span>wgs</span>
     
-        <span class="sidebar-tag-name" data-tags="Schedule"><span class="iconfont-archer">&#xe606;</span>Schedule</span>
-    
         <span class="sidebar-tag-name" data-tags="webstorm"><span class="iconfont-archer">&#xe606;</span>webstorm</span>
+    
+        <span class="sidebar-tag-name" data-tags="Schedule"><span class="iconfont-archer">&#xe606;</span>Schedule</span>
     
         <span class="sidebar-tag-name" data-tags="postgre"><span class="iconfont-archer">&#xe606;</span>postgre</span>
     
         <span class="sidebar-tag-name" data-tags="水印"><span class="iconfont-archer">&#xe606;</span>水印</span>
     
-        <span class="sidebar-tag-name" data-tags="Thread"><span class="iconfont-archer">&#xe606;</span>Thread</span>
-    
         <span class="sidebar-tag-name" data-tags="Executors"><span class="iconfont-archer">&#xe606;</span>Executors</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thread"><span class="iconfont-archer">&#xe606;</span>Thread</span>
     
         <span class="sidebar-tag-name" data-tags="filter, logger"><span class="iconfont-archer">&#xe606;</span>filter, logger</span>
     
