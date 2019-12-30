@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>SpringBoot发送邮件 · 熊小维&#39;s Studio</title>
+    <title>Docker中安装redis · 熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">熊小维&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">SpringBoot发送邮件</a>
+                <a href="#" class="post-name">Docker中安装redis</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            SpringBoot发送邮件
+            Docker中安装redis
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="mail">mail</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">378</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">111</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/12/06</span>
+                    <span class="post-intro-time">2019/12/31</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,25 +401,23 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>SpringBoot发送邮件十分简单，内置的方法已足够实现</p>
-<h1 id="1-配置邮箱"><a href="#1-配置邮箱" class="headerlink" title="1 配置邮箱"></a>1 配置邮箱</h1><p>在 <code>applicaition.yml</code> 中进行邮箱的基本配置</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">mail:</span></span><br><span class="line">    <span class="comment">#    发送邮件服务器</span></span><br><span class="line"><span class="attr">    host:</span> <span class="string">smtp.qq.com</span></span><br><span class="line">    <span class="comment">#    发送邮箱的名称</span></span><br><span class="line"><span class="attr">    username:</span> <span class="number">317119190</span><span class="string">@qq.com</span></span><br><span class="line">    <span class="comment">#    邮箱授权码</span></span><br><span class="line"><span class="attr">    password:</span> <span class="string">[可以在QQ邮箱的</span> <span class="string">设置-账户-生成授权码</span> <span class="string">进行生成]</span></span><br><span class="line"><span class="attr">    properties:</span></span><br><span class="line"><span class="attr">      mail:</span></span><br><span class="line"><span class="attr">        default-encoding:</span> <span class="string">utf-8</span></span><br><span class="line"><span class="attr">        smtp:</span></span><br><span class="line"><span class="attr">          port:</span> <span class="number">465</span></span><br><span class="line"><span class="attr">          starttls:</span></span><br><span class="line"><span class="attr">            enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">            required:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">          ssl:</span></span><br><span class="line"><span class="attr">            enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment">#   发送邮箱的地址</span></span><br><span class="line"><span class="attr">    from:</span> <span class="number">317119190</span><span class="string">@qq.com</span></span><br></pre></td></tr></table></figure>
-<p>再去 <code>pom</code> 文件里面添加上依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="2-编写Service类"><a href="#2-编写Service类" class="headerlink" title="2 编写Service类"></a>2 编写Service类</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.taskline.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.taskline.service.MailService;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.SimpleMailMessage;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.javamail.JavaMailSender;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.javamail.MimeMessageHelper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.mail.MessagingException;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MailServiceImpl</span> <span class="keyword">implements</span> <span class="title">MailService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JavaMailSender mailSender;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;spring.mail.from&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String from;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">sendSimpleMail</span><span class="params">(String to, String subject, String content)</span> </span>&#123;</span><br><span class="line">        SimpleMailMessage message = <span class="keyword">new</span> SimpleMailMessage();</span><br><span class="line">        message.setFrom(from);</span><br><span class="line">        message.setTo(to);</span><br><span class="line">        message.setSubject(subject);</span><br><span class="line">        message.setText(content);</span><br><span class="line">        mailSender.send(message);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">sendHTMLMail</span><span class="params">(String to, String subject, String content)</span> </span>&#123;</span><br><span class="line">        MimeMessage message = mailSender.createMimeMessage();</span><br><span class="line">        MimeMessageHelper messageHelper;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            messageHelper = <span class="keyword">new</span> MimeMessageHelper(message, <span class="keyword">true</span>);</span><br><span class="line">            messageHelper.setFrom(from);</span><br><span class="line">            messageHelper.setTo(to);</span><br><span class="line">            message.setSubject(subject);</span><br><span class="line">            messageHelper.setText(content, <span class="keyword">true</span>);</span><br><span class="line">            mailSender.send(message);</span><br><span class="line">            log.info(<span class="string">"邮件发送成功"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (MessagingException e)&#123;</span><br><span class="line">            log.info(<span class="string">"邮件发送失败，原因："</span> + e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>其中，<code>sendSimpleMail</code> 用于发送普通纯文本邮件</p>
-<p>而 <code>sendHTMLMail</code> 则可以用于发送HTML格式的邮件，有助于内容的排版</p>
+        <h1 id="1-配置Redis-conf"><a href="#1-配置Redis-conf" class="headerlink" title="1 配置Redis.conf"></a>1 配置Redis.conf</h1><p>将 <code>redis.conf</code> 文件传到服务器的 <code>/root</code> 下</p>
+<p>文件地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/ConfusedBear/repository/blob/master/redis.conf</span><br></pre></td></tr></table></figure>
+<h1 id="2-Docker运行Redis"><a href="#2-Docker运行Redis" class="headerlink" title="2 Docker运行Redis"></a>2 Docker运行Redis</h1><blockquote>
+<p>docker直接运行，会自动进行镜像的下载和安装</p>
 </blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 6379:6379 -v /redis/data:/data -v /root/redis.conf:/usr/local/etc/redis/redis.conf --restart=unless-stopped --name redis redis redis-server /usr/local/etc/redis/redis.conf --appendonly yes</span><br></pre></td></tr></table></figure>
+<h1 id="3-服务器安全组打开6379端口"><a href="#3-服务器安全组打开6379端口" class="headerlink" title="3 服务器安全组打开6379端口"></a>3 服务器安全组打开6379端口</h1><p>不打开则无法顺利连接</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://confusedbear.github.io">熊小维</a>
-            </p><p>原文链接：<a href="http://confusedbear.github.io/2019/12/06/SpringBoot发送邮件/">http://confusedbear.github.io/2019/12/06/SpringBoot发送邮件/</a>
-            </p><p>发表日期：<a href="http://confusedbear.github.io/2019/12/06/SpringBoot发送邮件/">December 6th 2019, 4:05:00 pm</a>
-            </p><p>更新日期：<a href="http://confusedbear.github.io/2019/12/06/SpringBoot发送邮件/">December 6th 2019, 4:10:15 pm</a>
+            </p><p>原文链接：<a href="http://confusedbear.github.io/2019/12/31/Docker中安装redis/">http://confusedbear.github.io/2019/12/31/Docker中安装redis/</a>
+            </p><p>发表日期：<a href="http://confusedbear.github.io/2019/12/31/Docker中安装redis/">December 31st 2019, 12:54:09 am</a>
+            </p><p>更新日期：<a href="http://confusedbear.github.io/2019/12/31/Docker中安装redis/">December 31st 2019, 1:10:12 am</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -427,17 +425,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/12/10/RestTemplate进行HTTP请求/" title="RestTemplate进行HTTP请求">
-                    <div class="nextTitle">RestTemplate进行HTTP请求</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/12/03/docker日志清理/" title="docker日志清理">
-                    <div class="prevTitle">docker日志清理</div>
+                <a href="/2019/12/30/DockerHub配置阿里云/" title="DockerHub配置阿里云">
+                    <div class="prevTitle">DockerHub配置阿里云</div>
                 </a>
             
         </li>
@@ -454,8 +447,8 @@ height:50vh;
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
         var disqus_config = function () {
-        this.page.url = "http://confusedbear.github.io/2019/12/06/SpringBoot发送邮件/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "SpringBoot发送邮件"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://confusedbear.github.io/2019/12/31/Docker中安装redis/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "Docker中安装redis"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
         (function () { // DON'T EDIT BELOW THIS LINE
@@ -574,7 +567,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-配置邮箱"><span class="toc-number">1.</span> <span class="toc-text">1 配置邮箱</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-编写Service类"><span class="toc-number">2.</span> <span class="toc-text">2 编写Service类</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-配置Redis-conf"><span class="toc-number">1.</span> <span class="toc-text">1 配置Redis.conf</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Docker运行Redis"><span class="toc-number">2.</span> <span class="toc-text">2 Docker运行Redis</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-服务器安全组打开6379端口"><span class="toc-number">3.</span> <span class="toc-text">3 服务器安全组打开6379端口</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
