@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>生成水印及上传OSS · 熊小维&#39;s Studio</title>
+    <title>熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,23 +203,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">熊小维&#39;s Studio.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">生成水印及上传OSS</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">熊小维's Studio.</a>
 </header>
@@ -231,74 +220,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            生成水印及上传OSS
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="水印">水印</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">669</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/11/18</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -399,81 +338,42 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <p>目前有一个需求是生成像是钉钉聊天页面中的水印，这个可以前端生成也可以后端生成，最终采用了后端生成，虽然我觉得前端生成的效果更好，因为有很方便的插件，文字抗锯齿效果也更好</p>
-<p>使用了BufferedImage，Graphics2D</p>
-<h3 id="1-先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关"><a href="#1-先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关" class="headerlink" title="1 先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关"></a>1 先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">String text = <span class="string">"这里是水印 托马斯1234"</span>;</span><br><span class="line"><span class="comment">// 设置字体大小为14px，则一个中文的宽度是14px，一个数字和空格的宽度是8px</span></span><br><span class="line"><span class="keyword">int</span> fontSize = <span class="number">14</span>;</span><br><span class="line"><span class="comment">// 计算字体的长度</span></span><br><span class="line"><span class="keyword">int</span> StringLengthofNum = text.length();</span><br><span class="line"><span class="comment">// 长方形字高</span></span><br><span class="line"><span class="keyword">int</span> h = (<span class="keyword">int</span>) (<span class="number">1.5</span> * fontSize);</span><br><span class="line"><span class="comment">// 长方形字长 (多留一点长度)</span></span><br><span class="line"><span class="keyword">int</span> l = fontSize * StringLengthofNum;</span><br><span class="line"><span class="comment">// 图片宽 = 二分之一字高 + 二分之根号三字长</span></span><br><span class="line"><span class="keyword">int</span> width = (<span class="keyword">int</span>) ((h / <span class="number">2</span>) + l * Math.cos(Math.toRadians(<span class="number">30</span>)));</span><br><span class="line"><span class="comment">// 图片高 = 二分之一字长 + 二分之根号三字高</span></span><br><span class="line"><span class="keyword">int</span> height = (<span class="keyword">int</span>) ((l / <span class="number">2</span>) + h * Math.cos(Math.toRadians(<span class="number">30</span>)));</span><br></pre></td></tr></table></figure>
-<h3 id="2-开始生成一个透明的PNG图片作为背景"><a href="#2-开始生成一个透明的PNG图片作为背景" class="headerlink" title="2 开始生成一个透明的PNG图片作为背景"></a>2 开始生成一个透明的PNG图片作为背景</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BufferedImage image = <span class="keyword">new</span> BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);</span><br><span class="line">Graphics2D g = image.createGraphics();</span><br><span class="line"><span class="comment">//设置背景为透明，如果不设置则背景默认为黑色</span></span><br><span class="line">image = g.getDeviceConfiguration().createCompatibleImage(width, height, Transparency.TRANSLUCENT);</span><br><span class="line">g.dispose();</span><br><span class="line">g = image.createGraphics();</span><br></pre></td></tr></table></figure>
-<h3 id="3-开始把水印写上去"><a href="#3-开始把水印写上去" class="headerlink" title="3 开始把水印写上去"></a>3 开始把水印写上去</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启抗锯齿</span></span><br><span class="line">g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</span><br><span class="line">g.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_DEFAULT);</span><br><span class="line">g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);</span><br><span class="line"><span class="comment">// 设置字体透明度</span></span><br><span class="line">g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, <span class="number">0.5f</span>));</span><br><span class="line"><span class="comment">// 设置字体颜色</span></span><br><span class="line">g.setColor(Color.BLACK);</span><br><span class="line"><span class="comment">// 设置字体种类和字重类型</span></span><br><span class="line">Font font = <span class="keyword">new</span> Font(<span class="string">"微软雅黑"</span>, Font.PLAIN, fontSize);</span><br><span class="line">g.setFont(font);</span><br><span class="line"><span class="comment">// 将画布逆时针旋转30度</span></span><br><span class="line">g.rotate(Math.toRadians(-<span class="number">30</span>), <span class="number">0</span>, height);</span><br><span class="line"><span class="comment">// 画布写字</span></span><br><span class="line">g.drawString(text, fontSize / <span class="number">3</span>, height);</span><br><span class="line">g.dispose();</span><br></pre></td></tr></table></figure>
-<h3 id="4-生成的水印图片放在本地保存"><a href="#4-生成的水印图片放在本地保存" class="headerlink" title="4 生成的水印图片放在本地保存"></a>4 生成的水印图片放在本地保存</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	String outImgPath = <span class="string">"test.png"</span>;</span><br><span class="line">	FileOutputStream outImgStream = <span class="keyword">new</span> FileOutputStream(outImgPath);</span><br><span class="line">	ImageIO.write(image, <span class="string">"png"</span>, outImgStream);</span><br><span class="line">	outImgStream.flush();</span><br><span class="line">	outImgStream.close();</span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="5-生成的水印上传OSS"><a href="#5-生成的水印上传OSS" class="headerlink" title="5 生成的水印上传OSS"></a>5 生成的水印上传OSS</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">OSS ossClient = <span class="keyword">new</span> OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);</span><br><span class="line">String key = <span class="string">"user/image/"</span> + UUID.randomUUID() + <span class="string">".png"</span>;</span><br><span class="line">log.info(<span class="string">"key: "</span> + key);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// 直接生成文件流</span></span><br><span class="line">  ByteArrayOutputStream os = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">	ImageIO.write(image, <span class="string">"png"</span>, os);</span><br><span class="line">	InputStream input = <span class="keyword">new</span> ByteArrayInputStream(os.toByteArray());</span><br><span class="line">  </span><br><span class="line">	<span class="comment">// OSS私有上传（下载时需要设置过期时间）</span></span><br><span class="line">	PutObjectResult putObjectResult = ossClient.putObject(bucketName, key, input);</span><br><span class="line">	log.info(<span class="string">"result: "</span> + putObjectResult);</span><br><span class="line">  </span><br><span class="line">	<span class="comment">// OSS公有上传 (下载生成的URL无过期时间)</span></span><br><span class="line">	PutObjectRequest putObjectRequest = <span class="keyword">new</span> PutObjectRequest(bucketName, key, input);</span><br><span class="line">	ObjectMetadata metadata = <span class="keyword">new</span> ObjectMetadata();</span><br><span class="line">	<span class="comment">// 设置Object为公共读</span></span><br><span class="line">	metadata.setObjectAcl(CannedAccessControlList.PublicRead);</span><br><span class="line">	putObjectRequest.setMetadata(metadata);</span><br><span class="line">	ossClient.putObject(putObjectRequest);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// OSS确认Object存在</span></span><br><span class="line">	<span class="keyword">boolean</span> found = ossClient.doesObjectExist(bucketName, key);</span><br><span class="line">	log.info(<span class="string">"found: "</span> + found);</span><br><span class="line">  </span><br><span class="line">	<span class="comment">// OSS获得临时URL（当私有上传时）</span></span><br><span class="line">	Date expiration = <span class="keyword">new</span> Date(<span class="keyword">new</span> Date().getTime() + <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">	URL url = ossClient.generatePresignedUrl(bucketName, key, expiration);</span><br><span class="line">  </span><br><span class="line">	<span class="comment">// OSS获得永久URL（当公有上传时）</span></span><br><span class="line">	String url = bucketName + <span class="string">"."</span> + endpoint.substring(<span class="number">8</span>) + <span class="string">"/"</span> + key;</span><br><span class="line">	log.info(<span class="string">"url: "</span> + url);</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">	ossClient.shutdown();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-    </article>
-    <!-- license  -->
+            <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>原文作者：<a href="http://confusedbear.github.io">熊小维</a>
-            </p><p>原文链接：<a href="http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/">http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/</a>
-            </p><p>发表日期：<a href="http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/">November 18th 2019, 1:33:12 pm</a>
-            </p><p>更新日期：<a href="http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/">November 26th 2019, 6:12:57 pm</a>
-            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/12/30/DockerHub配置阿里云/">
+            
+                <span>DockerHub配置阿里云</span>
+        </a>
+        <div class="abstract-content">
+            Docker在下载镜像的时候，由于镜像源来自国外，速度会比较慢，这里也可以配置阿里云的源，只是需要额外设置一下，因为DockerHub的加速地址，每个人都不一样
+1 登录DockerHub阿里云页面，查看自己的地址登录  https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
+查看加速器地址中  https://[id].mirror.aliyuncs.com 中的id部分
+2 配置镜像加速器12345678sudo mkdir -p /etc/dockersudo tee /etc/docker/daemon.json &...
         </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="dockerhub">dockerhub</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/11/20/修改yum源为aliyun/" title="修改yum源为aliyun">
-                    <div class="nextTitle">修改yum源为aliyun</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/11/12/过滤器与日志/" title="过滤器与日志">
-                    <div class="prevTitle">过滤器与日志</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        
-        var disqus_config = function () {
-        this.page.url = "http://confusedbear.github.io/2019/11/18/生成水印及上传OSS/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "生成水印及上传OSS"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://confusedbear-github-io.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -555,24 +455,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关"><span class="toc-number">1.</span> <span class="toc-text">1 先计算好生成的水印图片的长宽，而长宽的大小和水印的字数有关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-开始生成一个透明的PNG图片作为背景"><span class="toc-number">2.</span> <span class="toc-text">2 开始生成一个透明的PNG图片作为背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-开始把水印写上去"><span class="toc-number">3.</span> <span class="toc-text">3 开始把水印写上去</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-生成的水印图片放在本地保存"><span class="toc-number">4.</span> <span class="toc-text">4 生成的水印图片放在本地保存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-生成的水印上传OSS"><span class="toc-number">5.</span> <span class="toc-text">5 生成的水印上传OSS</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1816,8 +1698,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
