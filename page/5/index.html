@@ -359,6 +359,86 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/08/23/PDF下载链接/">
+            
+                <span>PDF下载链接</span>
+        </a>
+        <div class="abstract-content">
+            PythonPython 3网络爬虫开发实战
+
+链接:https://pan.baidu.com/s/1IeTgMrtrRHaw5FHHYbsotw  密码:klmm
+
+Python基础教程 第3版
+
+链接:https://pan.baidu.com/s/19WHcP6x7OGxOrvjp_KT2ew  密码:hqhg
+
+数据库PostgreSQL技术内幕 查询优化深度探索
+
+链接:https://pan.baidu.com/s/1599DSsNWFL8X8pru54CElg  密码:wn4g
+
+MySQL必知必会
+
+链接:https://pan.baidu.com/s/1T3yV8xh...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="PDF">PDF</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/06/26/SpringBoot进阶笔记/">
+            
+                <span>SpringBoot进阶笔记</span>
+        </a>
+        <div class="abstract-content">
+            <h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h1><h4 id="修改-Luckymoney对象"><a href="#修改-Luckymoney对象" class="headerlink" title="修改 Luckymoney对象"></a>修改 Luckymoney对象</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Min</span>(value = <span class="number">1</span>, message = <span class="string">"红包太小禁止发送"</span>)</span><br><span class="line"><span class="keyword">private</span> BigDecimal money;</span><br></pre></td></tr></table></figure>
+<h4 id="修改-LuckymoneyController"><a href="#修改-LuckymoneyController" class="headerlink" title="修改 LuckymoneyController"></a>修改 LuckymoneyController</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建红包</span></span><br><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/luckymoneys"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Luckymoney <span class="title">create</span><span class="params">(@Valid Luckymoney luckymoney, BindingResult bindingResult)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(bindingResult.hasErrors())&#123;</span><br><span class="line">  		System.out.println(bindingResult.getFieldError().getDefaultMessage());</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	luckymoney.setProducer(producer);</span><br><span class="line">	luckymoney.setMoney(money);</span><br><span class="line">	<span class="keyword">return</span> repository.save(luckymoney);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="AOP-统一处理请求日志"><a href="#AOP-统一处理请求日志" class="headerlink" title="AOP 统一处理请求日志"></a>AOP 统一处理请求日志</h1><p>AOP 是一种编程范式，与语言无关，是一种程序设计思想</p>
+<p>面向切面（AOP）Aspect Oriented Programming</p>
+<p>面向对象（OOP）Object Oriented Programming</p>
+<p>面向过程（POP）Procedure Oriented Programming</p>
+<p>AOP 将通用逻辑从业务逻辑中分离出来</p>
+<h4 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="新建-HttpAspect-java"><a href="#新建-HttpAspect-java" class="headerlink" title="新建 HttpAspect.java"></a>新建 HttpAspect.java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpAspect</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 对 List 方法进行拦截</span></span><br><span class="line">  <span class="meta">@Before</span>(<span class="string">"execution(public * com.imooc.controller.LuckymoneysController.list(..))"</span>)</span><br><span class="line">  <span class="comment">// 对所有方法都拦截</span></span><br><span class="line">  <span class="meta">@Before</span>(<span class="string">"execution(public * com.imooc.controller.LuckymoneysController.*(..))"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@After</span>(<span class="string">"execution(public * com.imooc.controller.LuckymoneysController.*(..))"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="SpringBoot">SpringBoot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/06/25/SpringBoot入门笔记/">
             
                 <span>SpringBoot 制作红包笔记</span>
@@ -622,78 +702,10 @@ https://github.com/simonflueckiger/tesserocr-windows_build/releases
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/18/队列顺序与组顺序/">
-            
-                <span>队顺序与组顺序</span>
-        </a>
-        <div class="abstract-content">
-            <p>今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，因为题目都是一个个的按照队的顺序来存储，但是用的时候需要按组来拿出题目展示，现在完成了任务，来梳理一下：</p>
-<h4 id="队顺序"><a href="#队顺序" class="headerlink" title="队顺序"></a>队顺序</h4><p>即从0开始逐个递增的队列顺序</p>
-<h4 id="组顺序"><a href="#组顺序" class="headerlink" title="组顺序"></a>组顺序</h4><p>队列中若干个为一组，组号也从0开始逐个递增</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>队序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</p>
-<p>组序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7   8</p>
-<p>参数        0 0 0 3 = = = 0 0 0  5   =   =    =   =   =   0</p>
-<blockquote>
-<p>参数代表该组第一个后还剩下几个</p>
-</blockquote>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="逻辑">逻辑</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/17/React小项目走过的坑/">
-            
-                <span>React小项目走过的坑</span>
-        </a>
-        <div class="abstract-content">
-            花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。
-Cookie获取起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。
-但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cookies（这个插件的下载数还有前面的几十分之一，取名还这么像，莫不是碰瓷的），大多数只适应于前端页面自己存自己取，对于后台传进来的Cookie，虽然浏览器可以看得到，但是目前还没有什么好办法可以获...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="React">React</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/4/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+        <a class="extend prev" rel="prev" href="/page/4/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1622,43 +1634,9 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 50
+        Total : 52
         </div>
         <!-- search  -->
         
@@ -1671,6 +1649,16 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/30</span><a class="archive-post-title" href="/2019/12/30/github初始化/">github初始化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/30</span><a class="archive-post-title" href="/2019/12/30/yarn配置阿里云/">yarn配置阿里云</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1739,6 +1727,11 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池Executors/">线程池Executors</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/jdk8原生多线程ParallelStream/">jdk8原生多线程ParallelStream</a>
         </li>
     
@@ -1749,7 +1742,7 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池Executors/">线程池Executors</a>
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/MySQL执行顺序/">MySQL执行顺序</a>
         </li>
     
     
@@ -1760,11 +1753,6 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/mybatis中#{}和${}区别/">mybatis中#{}和${}区别</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/MySQL执行顺序/">MySQL执行顺序</a>
         </li>
     
     
@@ -1927,19 +1915,19 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Connection"><span class="iconfont-archer">&#xe606;</span>Connection</span>
-    
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
-        <span class="sidebar-tag-name" data-tags="兼容问题"><span class="iconfont-archer">&#xe606;</span>兼容问题</span>
+        <span class="sidebar-tag-name" data-tags="Connection"><span class="iconfont-archer">&#xe606;</span>Connection</span>
     
-        <span class="sidebar-tag-name" data-tags="Port"><span class="iconfont-archer">&#xe606;</span>Port</span>
+        <span class="sidebar-tag-name" data-tags="兼容问题"><span class="iconfont-archer">&#xe606;</span>兼容问题</span>
     
         <span class="sidebar-tag-name" data-tags="端口"><span class="iconfont-archer">&#xe606;</span>端口</span>
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
         <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
+    
+        <span class="sidebar-tag-name" data-tags="Port"><span class="iconfont-archer">&#xe606;</span>Port</span>
     
         <span class="sidebar-tag-name" data-tags="PDF"><span class="iconfont-archer">&#xe606;</span>PDF</span>
     
@@ -1949,13 +1937,15 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
         <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
     
-        <span class="sidebar-tag-name" data-tags="restTemplate"><span class="iconfont-archer">&#xe606;</span>restTemplate</span>
-    
         <span class="sidebar-tag-name" data-tags="SSH"><span class="iconfont-archer">&#xe606;</span>SSH</span>
     
-        <span class="sidebar-tag-name" data-tags="mail"><span class="iconfont-archer">&#xe606;</span>mail</span>
+        <span class="sidebar-tag-name" data-tags="restTemplate"><span class="iconfont-archer">&#xe606;</span>restTemplate</span>
     
         <span class="sidebar-tag-name" data-tags="bean"><span class="iconfont-archer">&#xe606;</span>bean</span>
+    
+        <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
+    
+        <span class="sidebar-tag-name" data-tags="mail"><span class="iconfont-archer">&#xe606;</span>mail</span>
     
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
@@ -1963,9 +1953,9 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
         <span class="sidebar-tag-name" data-tags="mapper"><span class="iconfont-archer">&#xe606;</span>mapper</span>
     
-        <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
-    
         <span class="sidebar-tag-name" data-tags="maven"><span class="iconfont-archer">&#xe606;</span>maven</span>
+    
+        <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
     
         <span class="sidebar-tag-name" data-tags="npm"><span class="iconfont-archer">&#xe606;</span>npm</span>
     
@@ -1973,21 +1963,23 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
         <span class="sidebar-tag-name" data-tags="postgis"><span class="iconfont-archer">&#xe606;</span>postgis</span>
     
-        <span class="sidebar-tag-name" data-tags="ss"><span class="iconfont-archer">&#xe606;</span>ss</span>
-    
         <span class="sidebar-tag-name" data-tags="sbt"><span class="iconfont-archer">&#xe606;</span>sbt</span>
     
-        <span class="sidebar-tag-name" data-tags="地理围栏"><span class="iconfont-archer">&#xe606;</span>地理围栏</span>
+        <span class="sidebar-tag-name" data-tags="ss"><span class="iconfont-archer">&#xe606;</span>ss</span>
+    
+        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
+    
+        <span class="sidebar-tag-name" data-tags="yarn"><span class="iconfont-archer">&#xe606;</span>yarn</span>
     
         <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
-        <span class="sidebar-tag-name" data-tags="POST"><span class="iconfont-archer">&#xe606;</span>POST</span>
+        <span class="sidebar-tag-name" data-tags="地理围栏"><span class="iconfont-archer">&#xe606;</span>地理围栏</span>
     
         <span class="sidebar-tag-name" data-tags="table"><span class="iconfont-archer">&#xe606;</span>table</span>
     
-        <span class="sidebar-tag-name" data-tags="开发规范"><span class="iconfont-archer">&#xe606;</span>开发规范</span>
+        <span class="sidebar-tag-name" data-tags="POST"><span class="iconfont-archer">&#xe606;</span>POST</span>
     
-        <span class="sidebar-tag-name" data-tags="webstorm"><span class="iconfont-archer">&#xe606;</span>webstorm</span>
+        <span class="sidebar-tag-name" data-tags="开发规范"><span class="iconfont-archer">&#xe606;</span>开发规范</span>
     
         <span class="sidebar-tag-name" data-tags="wgs"><span class="iconfont-archer">&#xe606;</span>wgs</span>
     
@@ -2005,7 +1997,7 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     
         <span class="sidebar-tag-name" data-tags="逻辑"><span class="iconfont-archer">&#xe606;</span>逻辑</span>
     
-        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
+        <span class="sidebar-tag-name" data-tags="webstorm"><span class="iconfont-archer">&#xe606;</span>webstorm</span>
     
         <span class="sidebar-tag-name" data-tags="SpringBoot"><span class="iconfont-archer">&#xe606;</span>SpringBoot</span>
     
