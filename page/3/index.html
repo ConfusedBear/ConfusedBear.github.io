@@ -359,6 +359,40 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/11/25/jdk8原生多线程ParallelStream/">
+            
+                <span>jdk8原生多线程ParallelStream</span>
+        </a>
+        <div class="abstract-content">
+            可使用ParallelStream来进行自动多线程遍历对象
+12345List&lt;String&gt; list = new ArrayList&lt;&gt;();//lambda表达式list.parallelStream().forEach((s) -&gt; &#123;	System.out.println(s);&#125;);
+不过，ArrayList创造的列表遍历时，由于是线程不安全的，多线程会出现遍历同一数据的情况
+因此，可以考虑使用
+1Collections.synchronizedList(new ArrayList&lt;&gt;)
+来包装成线程安全的遍历对象...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ParallelStream">ParallelStream</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/11/25/线程池Executors/">
             
                 <span>线程池Executors</span>
@@ -656,43 +690,6 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="filter, logger">filter, logger</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/11/12/血的教训不要开docker2375私有仓库端口/">
-            
-                <span>血的教训不要开docker2375私有仓库端口</span>
-        </a>
-        <div class="abstract-content">
-            千万不要乱开docker2375私有仓库端口在公网上！！
-被挖矿了啊！！！
-
-大清早看服务器监控，发现CPU从半夜三点负载一直在50%
-进来docker一看，不知道谁给多装了个容器在运行
-看了日志才知道，原来是被挖矿程序给搞了，还知道用docker这个程序。。。
-原因应该就是因为之前为了方便，直接在本地配置了docker仓库地址，进行项目推送，开启了服务器docker的2375私有仓库端口，这才这么容易被装了挖矿程序
-再也不敢直接公网随便开端口了
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
 </div>
             
@@ -1699,9 +1696,78 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 56
+        Total : 57
         </div>
         <!-- search  -->
         
@@ -1714,6 +1780,11 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/12</span><a class="archive-post-title" href="/2020/02/12/SSRForIOS/">SSRForIOS</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1821,11 +1892,6 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池Executors/">线程池Executors</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/SpringBoot多线程注入bean/">SpringBoot多线程注入bean</a>
         </li>
     
@@ -1836,17 +1902,22 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池Executors/">线程池Executors</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/mybatis中#{}和${}区别/">mybatis中#{}和${}区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/MySQL执行顺序/">MySQL执行顺序</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/线程池ThreadPoolExecutor/">线程池ThreadPoolExecutor</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href="/2019/11/25/mybatis中#{}和${}区别/">mybatis中#{}和${}区别</a>
         </li>
     
     
@@ -2009,19 +2080,17 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Connection"><span class="iconfont-archer">&#xe606;</span>Connection</span>
-    
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
-        <span class="sidebar-tag-name" data-tags="dockerhub"><span class="iconfont-archer">&#xe606;</span>dockerhub</span>
+        <span class="sidebar-tag-name" data-tags="Connection"><span class="iconfont-archer">&#xe606;</span>Connection</span>
     
-        <span class="sidebar-tag-name" data-tags="redis"><span class="iconfont-archer">&#xe606;</span>redis</span>
-    
-        <span class="sidebar-tag-name" data-tags="兼容问题"><span class="iconfont-archer">&#xe606;</span>兼容问题</span>
+        <span class="sidebar-tag-name" data-tags="Port"><span class="iconfont-archer">&#xe606;</span>Port</span>
     
         <span class="sidebar-tag-name" data-tags="端口"><span class="iconfont-archer">&#xe606;</span>端口</span>
     
-        <span class="sidebar-tag-name" data-tags="Port"><span class="iconfont-archer">&#xe606;</span>Port</span>
+        <span class="sidebar-tag-name" data-tags="redis"><span class="iconfont-archer">&#xe606;</span>redis</span>
+    
+        <span class="sidebar-tag-name" data-tags="dockerhub"><span class="iconfont-archer">&#xe606;</span>dockerhub</span>
     
         <span class="sidebar-tag-name" data-tags="PDF"><span class="iconfont-archer">&#xe606;</span>PDF</span>
     
@@ -2029,15 +2098,17 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
         <span class="sidebar-tag-name" data-tags="Postgre"><span class="iconfont-archer">&#xe606;</span>Postgre</span>
     
-        <span class="sidebar-tag-name" data-tags="Python爬虫"><span class="iconfont-archer">&#xe606;</span>Python爬虫</span>
+        <span class="sidebar-tag-name" data-tags="兼容问题"><span class="iconfont-archer">&#xe606;</span>兼容问题</span>
     
         <span class="sidebar-tag-name" data-tags="服务器"><span class="iconfont-archer">&#xe606;</span>服务器</span>
     
-        <span class="sidebar-tag-name" data-tags="SSR"><span class="iconfont-archer">&#xe606;</span>SSR</span>
+        <span class="sidebar-tag-name" data-tags="Python爬虫"><span class="iconfont-archer">&#xe606;</span>Python爬虫</span>
     
         <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
     
-        <span class="sidebar-tag-name" data-tags="restTemplate"><span class="iconfont-archer">&#xe606;</span>restTemplate</span>
+        <span class="sidebar-tag-name" data-tags="IOS"><span class="iconfont-archer">&#xe606;</span>IOS</span>
+    
+        <span class="sidebar-tag-name" data-tags="SSR"><span class="iconfont-archer">&#xe606;</span>SSR</span>
     
         <span class="sidebar-tag-name" data-tags="SSH"><span class="iconfont-archer">&#xe606;</span>SSH</span>
     
@@ -2045,25 +2116,23 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
         <span class="sidebar-tag-name" data-tags="bean"><span class="iconfont-archer">&#xe606;</span>bean</span>
     
-        <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
-    
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="mapper"><span class="iconfont-archer">&#xe606;</span>mapper</span>
     
         <span class="sidebar-tag-name" data-tags="ParallelStream"><span class="iconfont-archer">&#xe606;</span>ParallelStream</span>
     
+        <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
+    
         <span class="sidebar-tag-name" data-tags="maven"><span class="iconfont-archer">&#xe606;</span>maven</span>
+    
+        <span class="sidebar-tag-name" data-tags="mapper"><span class="iconfont-archer">&#xe606;</span>mapper</span>
     
         <span class="sidebar-tag-name" data-tags="mybatis"><span class="iconfont-archer">&#xe606;</span>mybatis</span>
     
         <span class="sidebar-tag-name" data-tags="npm"><span class="iconfont-archer">&#xe606;</span>npm</span>
     
-        <span class="sidebar-tag-name" data-tags="play"><span class="iconfont-archer">&#xe606;</span>play</span>
-    
         <span class="sidebar-tag-name" data-tags="postgis"><span class="iconfont-archer">&#xe606;</span>postgis</span>
     
-        <span class="sidebar-tag-name" data-tags="ss"><span class="iconfont-archer">&#xe606;</span>ss</span>
+        <span class="sidebar-tag-name" data-tags="play"><span class="iconfont-archer">&#xe606;</span>play</span>
     
         <span class="sidebar-tag-name" data-tags="postgres"><span class="iconfont-archer">&#xe606;</span>postgres</span>
     
@@ -2073,9 +2142,11 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
         <span class="sidebar-tag-name" data-tags="地理围栏"><span class="iconfont-archer">&#xe606;</span>地理围栏</span>
     
-        <span class="sidebar-tag-name" data-tags="yarn"><span class="iconfont-archer">&#xe606;</span>yarn</span>
+        <span class="sidebar-tag-name" data-tags="ss"><span class="iconfont-archer">&#xe606;</span>ss</span>
     
         <span class="sidebar-tag-name" data-tags="POST"><span class="iconfont-archer">&#xe606;</span>POST</span>
+    
+        <span class="sidebar-tag-name" data-tags="yarn"><span class="iconfont-archer">&#xe606;</span>yarn</span>
     
         <span class="sidebar-tag-name" data-tags="table"><span class="iconfont-archer">&#xe606;</span>table</span>
     
@@ -2083,23 +2154,25 @@ ${}无法防止SQL注入，默认不会当做字符串处理，没有单引号
     
         <span class="sidebar-tag-name" data-tags="wgs"><span class="iconfont-archer">&#xe606;</span>wgs</span>
     
-        <span class="sidebar-tag-name" data-tags="Schedule"><span class="iconfont-archer">&#xe606;</span>Schedule</span>
-    
         <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
-        <span class="sidebar-tag-name" data-tags="postgre"><span class="iconfont-archer">&#xe606;</span>postgre</span>
+        <span class="sidebar-tag-name" data-tags="Schedule"><span class="iconfont-archer">&#xe606;</span>Schedule</span>
+    
+        <span class="sidebar-tag-name" data-tags="webstorm"><span class="iconfont-archer">&#xe606;</span>webstorm</span>
     
         <span class="sidebar-tag-name" data-tags="水印"><span class="iconfont-archer">&#xe606;</span>水印</span>
+    
+        <span class="sidebar-tag-name" data-tags="postgre"><span class="iconfont-archer">&#xe606;</span>postgre</span>
     
         <span class="sidebar-tag-name" data-tags="Executors"><span class="iconfont-archer">&#xe606;</span>Executors</span>
     
         <span class="sidebar-tag-name" data-tags="Thread"><span class="iconfont-archer">&#xe606;</span>Thread</span>
     
-        <span class="sidebar-tag-name" data-tags="webstorm"><span class="iconfont-archer">&#xe606;</span>webstorm</span>
-    
         <span class="sidebar-tag-name" data-tags="filter, logger"><span class="iconfont-archer">&#xe606;</span>filter, logger</span>
     
         <span class="sidebar-tag-name" data-tags="逻辑"><span class="iconfont-archer">&#xe606;</span>逻辑</span>
+    
+        <span class="sidebar-tag-name" data-tags="restTemplate"><span class="iconfont-archer">&#xe606;</span>restTemplate</span>
     
         <span class="sidebar-tag-name" data-tags="SpringBoot"><span class="iconfont-archer">&#xe606;</span>SpringBoot</span>
     
