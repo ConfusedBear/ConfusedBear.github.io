@@ -346,259 +346,34 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/06/19/服务器搭建postgreSQL/">
+        <a class="abstract-title" href="/2020/02/14/React-SpringBoot部署全纪录/">
             
-                <span>服务器搭建postgreSQL</span>
+                <span>React+SpringBoot部署全纪录</span>
         </a>
         <div class="abstract-content">
-            centOS搭建postgreSQL，进行到监听对外端口的时候，按照教程将listen_address = ‘*’了，也将pg_hba.conf文件中的host all all 0.0.0.0/0 md5设置好了，外面仍然无法连接到，内部检查发现监听端口还是127.0.0.0。
+            初始环境
+一台具有公网IP的服务器
+前端React项目
+后端SpringBoot项目
+本地测试功能正常
 
-官方文档讲解：
-Specifies the TCP/IP address(es) on which the server is to listen for connections from client applications. The value takes the form of a comma-sepa...
+编译React项目Package.json - build  点击进行编译，产出的文件夹在 /Users/xiongxiaowei/React/taskline/build
+传送文件夹至服务器：
+1scp -r build/ bear:/root/docker/nginx/buildtl
+编辑SpringBoot项目项目位置输入打包命令
+1mvn clean package -DskipTests
+打包后的 jar 文件在 /Users/xiongxiaowei/IdeaProjec...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/19</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/14</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="postgre">postgre</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/hexo的坑/">
-            
-                <span>hexo的坑</span>
-        </a>
-        <div class="abstract-content">
-            1 直接在 source -&gt; _posts 里生成Md文件是无效的，总是要走 hexo new 这一步的
-2 md文件里面使用了
-1scroll = &#123;&#123;y : 600&#125;&#125;
-其中的两个大括号会导致 hexo g 时报错。。。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/表头和内容不对齐/">
-            
-                <span>表头和内容不对齐</span>
-        </a>
-        <div class="abstract-content">
-            在使用antd的table组件时，由于需求需要用到表头固定的table组件，示例用法是设置其中某一列的width就可以自动固定住表头，同时由于内容行数很多，还需要可以上下滚动，所以还要设置 scroll= y : 600，实际用的时候由于列比较多，一旦使用 scroll 属性，就会发现表头和内容的列宽度根本没有对齐，而且由于table列宽默认是自动计算的，改变浏览器大小的话，列宽也都会自动改变，而且还是不对齐
-解决办法123456789101112 table &#123;     table-layout:fixed; &#125; .resultColumns &#123;     ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/11/允许长数字或者长单词自动折断/">
-            
-                <span>允许长数字或者长单词自动折断</span>
-        </a>
-        <div class="abstract-content">
-            默认情况下，antd 的 table 组件里面的内容，遇到长单词或者长数字，都是为了完整性，默认无法折断的
-解决办法在 table 外组件上添加属性：
-1whiteSpace: 'normal', wordBreak: 'break-all', wordWrap: 'break-word'
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="table">table</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/27/数据库新建多边形-计算点是否在多边形内/">
-            
-                <span>数据库新建多边形+计算点是否在多边形内</span>
-        </a>
-        <div class="abstract-content">
-            1 数据库新建GEOMTRY多边形类型字段新建数据类型字段 geom_fence ，选择类型为 geometry
-1ALTER TABLE geotable ADD COLUMN geo geometry
-2 将经纬度转换为POLYGON类型保存123UPDATE tr_qa_scenesSET geom_fence = ST_GeomFromText ('POLYGON((119.206801 29.381917,119.22103 29.360262,119.233247 29.383302,119.206801 29.381917))',4326)WHERE id = '26'
-转...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Postgre">Postgre</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/20/Python爬虫安装报错解决办法/">
-            
-                <span>Python爬虫安装报错解决办法</span>
-        </a>
-        <div class="abstract-content">
-            参考书籍：Python 3网络爬虫开发实战.pdf1 tesserocr安装问题安装完tesseract后安装tesserocr 使用Pip安装始终报错
-
-解决方案
-是使用编译好的.whl文件进行安装 .whl的下载地址为：
-https://github.com/simonflueckiger/tesserocr-windows_build/releases
-
-都安装好后试用时报错，无法识别且报错RuntimeError: Failed to init API, possibly an invalid tessdata
-
-解决方案
-将安装的Tesseract_OCR的tessdata的目...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Python爬虫">Python爬虫</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/18/队列顺序与组顺序/">
-            
-                <span>队顺序与组顺序</span>
-        </a>
-        <div class="abstract-content">
-            <p>今天的任务是要把之前单页单个的题目改成单页多个题目，大部分时间卡在逻辑上面了，因为题目都是一个个的按照队的顺序来存储，但是用的时候需要按组来拿出题目展示，现在完成了任务，来梳理一下：</p>
-<h4 id="队顺序"><a href="#队顺序" class="headerlink" title="队顺序"></a>队顺序</h4><p>即从0开始逐个递增的队列顺序</p>
-<h4 id="组顺序"><a href="#组顺序" class="headerlink" title="组顺序"></a>组顺序</h4><p>队列中若干个为一组，组号也从0开始逐个递增</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>队序    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</p>
-<p>组序    0 1 2 3 3 3 3 4 5 6  7   7   7    7   7   7   8</p>
-<p>参数        0 0 0 3 = = = 0 0 0  5   =   =    =   =   =   0</p>
-<blockquote>
-<p>参数代表该组第一个后还剩下几个</p>
-</blockquote>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="逻辑">逻辑</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/17/React小项目走过的坑/">
-            
-                <span>React小项目走过的坑</span>
-        </a>
-        <div class="abstract-content">
-            花了一个星期写的React问卷小项目，也走了不少初学者的坑，特来写下来以免记忆力衰退忘记，后面再犯。
-Cookie获取起初是希望该项目的前置网页通过URL参数的形式向后端发送一个参数，后端解析后包装进Cookie再发回给我写部分的前端，接收后拿出，在最后发送答案的时候一同发送过去。
-但是React市面上大部分的Cookie插件，比如js-cookie，react-cookie，react-cookies（这个插件的下载数还有前面的几十分之一，取名还这么像，莫不是碰瓷的），大多数只适应于前端页面自己存自己取，对于后台传进来的Cookie，虽然浏览器可以看得到，但是目前还没有什么好办法可以获...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="React">React</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="部署">部署</a>
     
 </div>
             
@@ -606,10 +381,6 @@ Cookie获取起初是希望该项目的前置网页通过URL参数的形式向�
     </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/5/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span>
-    </nav>
     
 </main>
             <!-- profile -->
