@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>熊小维&#39;s Studio</title>
+    <title>sbt设置华为云镜像 · 熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">熊小维&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">sbt设置华为云镜像</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">熊小维's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            sbt设置华为云镜像
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="sbt">sbt</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">158</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/03</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,41 +399,78 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/12/30/github初始化/">
-            
-                <span>github初始化</span>
-        </a>
-        <div class="abstract-content">
-            本地工程创建好后，需要和GitHub进行一个Git绑定
-123456echo "# reacttttttt" &gt;&gt; README.mdgit initgit add README.mdgit commit -m "first commit"git remote add origin https://github.com/ConfusedBear/reacttttttt.gitgit push -u origin master
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>华为镜像云官网：<a href="https://mirrors.huaweicloud.com/" target="_blank" rel="noopener">https://mirrors.huaweicloud.com/</a></p>
+<h1 id="下载sbt"><a href="#下载sbt" class="headerlink" title="下载sbt"></a>下载sbt</h1><p>官方下载地址：<a href="https://www.scala-sbt.org/download.html" target="_blank" rel="noopener">https://www.scala-sbt.org/download.html</a></p>
+<p>选择 <code>zip</code> 包解压到固定的位置，如 <code>D:\sbt</code></p>
+<h1 id="IDEA设置sbt"><a href="#IDEA设置sbt" class="headerlink" title="IDEA设置sbt"></a>IDEA设置sbt</h1><p>VM parameters 填上参数：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-Dsbt.log.format=true</span><br><span class="line">-Dfile.encoding=UTF8</span><br><span class="line">-Dsbt.global.base=d:/sbt/.sbt</span><br><span class="line">-Dsbt.boot.directory=d:/sbt/.sbt/boot/</span><br><span class="line">-Dsbt.repository.config=d:/sbt/.sbt/repositories</span><br><span class="line">-Dsbt.ivy.home=d:/sbt/.ivy2</span><br><span class="line">-Dsbt.override.build.repos=true</span><br><span class="line">-Xmx512M</span><br><span class="line">-Xss2M</span><br><span class="line">-XX:+CMSClassUnloadingEnabled</span><br></pre></td></tr></table></figure>
+<p>Settings - sbt Launcher 选择下载后的地址 如 <code>D:\sbt\bin\sbt-launch.jar</code> </p>
+<h1 id="修改repositories"><a href="#修改repositories" class="headerlink" title="修改repositories"></a>修改repositories</h1><p>修改内容如</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[repositories]</span><br><span class="line">  local</span><br><span class="line">  huaweicloud-ivy: https://mirrors.huaweicloud.com/repository/ivy/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]</span><br><span class="line">  huaweicloud-maven: https://mirrors.huaweicloud.com/repository/maven/</span><br></pre></td></tr></table></figure>
+<h1 id="重启IDEA"><a href="#重启IDEA" class="headerlink" title="重启IDEA"></a>重启IDEA</h1><p>重启IDEA并刷新SBT</p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="github">github</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://confusedbear.github.io">熊小维</a>
+            </p><p>原文链接：<a href="http://confusedbear.github.io/2020/03/03/sbt设置华为云镜像/">http://confusedbear.github.io/2020/03/03/sbt设置华为云镜像/</a>
+            </p><p>发表日期：<a href="http://confusedbear.github.io/2020/03/03/sbt设置华为云镜像/">March 3rd 2020, 11:50:16 am</a>
+            </p><p>更新日期：<a href="http://confusedbear.github.io/2020/03/03/sbt设置华为云镜像/">March 3rd 2020, 11:57:57 am</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/02/14/React-SpringBoot部署全纪录/" title="React+SpringBoot部署全纪录">
+                    <div class="prevTitle">React+SpringBoot部署全纪录</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "http://confusedbear.github.io/2020/03/03/sbt设置华为云镜像/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "sbt设置华为云镜像"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://confusedbear-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -454,6 +552,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#下载sbt"><span class="toc-number">1.</span> <span class="toc-text">下载sbt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IDEA设置sbt"><span class="toc-number">2.</span> <span class="toc-text">IDEA设置sbt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改repositories"><span class="toc-number">3.</span> <span class="toc-text">修改repositories</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#重启IDEA"><span class="toc-number">4.</span> <span class="toc-text">重启IDEA</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1854,6 +1970,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

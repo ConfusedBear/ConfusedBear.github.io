@@ -346,25 +346,27 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/12/30/github初始化/">
+        <a class="abstract-title" href="/2020/03/03/sbt设置华为云镜像/">
             
-                <span>github初始化</span>
+                <span>sbt设置华为云镜像</span>
         </a>
         <div class="abstract-content">
-            本地工程创建好后，需要和GitHub进行一个Git绑定
-123456echo "# reacttttttt" &gt;&gt; README.mdgit initgit add README.mdgit commit -m "first commit"git remote add origin https://github.com/ConfusedBear/reacttttttt.gitgit push -u origin master
-
+            华为镜像云官网：https://mirrors.huaweicloud.com/
+下载sbt官方下载地址：https://www.scala-sbt.org/download.html
+选择 zip 包解压到固定的位置，如 D:\sbt
+IDEA设置sbtVM parameters 填上参数：
+12345678910-Dsbt.log.format=true-Dfile.encoding=UTF8-Dsbt.global.base=d:/sbt/.sbt-Dsbt.boot.directory=d:/sbt/.sbt/boot/-Dsbt.repository.config=d:/sbt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/30</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/03</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="github">github</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="sbt">sbt</a>
     
 </div>
             
