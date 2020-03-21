@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>熊小维&#39;s Studio</title>
+    <title>postgre数组 · 熊小维&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">熊小维&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">postgre数组</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">熊小维's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            postgre数组
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="postgre">postgre</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">92</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/21</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,44 +399,73 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/09/20/Mac和Linux快速测试端口状态/">
-            
-                <span>Mac和Linux快速测试端口状态</span>
-        </a>
-        <div class="abstract-content">
-            测试端口存活的最常用的方法是telnet
-1$telnet 127.0.0.1 80
-不过这个方法有一个不方便的地方：连接成功后会进入交互模式，需要按 ctrl + ] 和 q 才能退出。
-后来，经过网上一番搜索，发现一个简便的方法，请出大神 nc
-123$nc -zv 127.0.0.1 80Connection to 127.0.0.1 port 80 [tcp/arepa-cas] succeeded!    # 成功nc: connectx to 127.0.0.1 port 80 (tcp) failed: Connection refused    # 失败
-命令运行后，1....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="端口">端口</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>Postgre重要的一个特征就是字段可以是数组形式</p>
+<h1 id="创建数组字段"><a href="#创建数组字段" class="headerlink" title="创建数组字段"></a>创建数组字段</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> array_test (</span><br><span class="line">	<span class="string">"col_array"</span> <span class="built_in">varchar</span>[], // 一维数组</span><br><span class="line">  <span class="string">"col_arrays"</span> <span class="built_in">varchar</span>[][] // 二维数组</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h1 id="插入数组元素"><a href="#插入数组元素" class="headerlink" title="插入数组元素"></a>插入数组元素</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> array_test</span><br><span class="line">(col_array, col_arrays)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'&#123;test1, test2&#125;'</span>, <span class="string">'&#123;&#123;test1, test2&#125;,&#123;test3&#125;&#125;'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> array_test</span><br><span class="line">(col_array, col_arrays)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="built_in">ARRAY</span>[<span class="string">'test1'</span>, <span class="string">'test2'</span>], ARRY[<span class="built_in">ARRAY</span>[<span class="string">'test1'</span>, <span class="string">'test2'</span>], <span class="built_in">ARRAY</span>[<span class="string">'test3'</span>]])</span><br></pre></td></tr></table></figure>
+<h1 id="查找数组元素"><a href="#查找数组元素" class="headerlink" title="查找数组元素"></a>查找数组元素</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> array_test</span><br><span class="line"><span class="keyword">WHERE</span> <span class="string">'test1'</span> = <span class="keyword">ANY</span>(col_array)</span><br></pre></td></tr></table></figure>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://confusedbear.github.io">熊小维</a>
+            </p><p>原文链接：<a href="http://confusedbear.github.io/2020/03/21/postgre数组/">http://confusedbear.github.io/2020/03/21/postgre数组/</a>
+            </p><p>发表日期：<a href="http://confusedbear.github.io/2020/03/21/postgre数组/">March 21st 2020, 10:10:09 pm</a>
+            </p><p>更新日期：<a href="http://confusedbear.github.io/2020/03/21/postgre数组/">March 21st 2020, 10:40:06 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/03/03/sbt设置华为云镜像/" title="sbt设置华为云镜像">
+                    <div class="prevTitle">sbt设置华为云镜像</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "http://confusedbear.github.io/2020/03/21/postgre数组/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "postgre数组"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://confusedbear-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -457,6 +547,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建数组字段"><span class="toc-number">1.</span> <span class="toc-text">创建数组字段</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#插入数组元素"><span class="toc-number">2.</span> <span class="toc-text">插入数组元素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查找数组元素"><span class="toc-number">3.</span> <span class="toc-text">查找数组元素</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1893,6 +2001,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
