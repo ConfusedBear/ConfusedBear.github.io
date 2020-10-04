@@ -3,11 +3,7 @@ name: Gatsby Publish
 on:
   push:
     branches:
-<<<<<<< HEAD
-      - master
-=======
       - dev
->>>>>>> 366bdb8bc215503df0ee54e60b887007afb44001
 
 jobs:
   build:
@@ -17,9 +13,3 @@ jobs:
       - uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
-<<<<<<< HEAD
-          deploy-branch: gh-pages
-#           gatsby-args: --prefix-paths
-#           skip-publish: true
-=======
->>>>>>> 366bdb8bc215503df0ee54e60b887007afb44001
