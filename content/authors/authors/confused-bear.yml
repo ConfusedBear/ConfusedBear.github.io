@@ -1,0 +1,11 @@
+name: Confused Bear
+bio: |
+  Time to Talk.
+avatar: ./avatars/confused-bear.jpg
+social:
+  - url: https://unsplash.com
+  - url: https://stackoverflow.com
+  - url: https://github.com
+  - url: https://github.com
+  - url: https://github.com
+featured: true
